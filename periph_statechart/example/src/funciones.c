@@ -31,24 +31,7 @@
 
 #include "board.h"
 
-/*****************************************************************************
- * Private types/enumerations/variables
- ****************************************************************************/
 
-static volatile bool fIntervalReached;
-static volatile bool fAlarmTimeMatched;
-static volatile bool On0, On1;
-typedef struct{
-
-	RTC_TIME_T clock;
-	uint32_t food;
-	bool init;
-
-}food_t;
-/*****************************************************************************
- * Public types/enumerations/variables
- ****************************************************************************/
-#define MAX_POS 3
 /*****************************************************************************
  * Private functions
  ****************************************************************************/
@@ -68,10 +51,7 @@ static void showTime(RTC_TIME_T *pTime)
  * Public functions
  ****************************************************************************/
 
-/**
- * @brief	RTC interrupt handler
- * @return	Nothing
- */
+
 
 void VectorFoodInit(food_t * VectorFood, RTC_TIME_T FullTime)
 {
@@ -176,6 +156,8 @@ void VAlarm_ordenar(RTC_TIME_T * AlarmVector){
  * @brief	Main entry point
  * @return	Nothing
  */
+
+/* EJEMPLO DE USO DE RTC*/
 int RTC(void)
 {
 	RTC_TIME_T FullTime;
