@@ -196,6 +196,23 @@ void VAlarm_ordenar(RTC_TIME_T * AlarmVector){
      }
 }
 
+
+void ServirComida (food_t * Comida, uint8_t * position){
+	int i;
+	Chip_SCTPWM_Start(LPC_SCT);
+	for(i=0;i<3;i++){
+		toggle_servo ();
+		tick_ct=0;
+		while(tick_ct<150){
+			__WFI();
+		}
+	}
+	Chip_SCTPWM_Stop(LPC_SCT);
+	(*position)++;
+	set_new_alarm(Comida, *position);
+
+}
+
 /**
  * @brief	Handle interrupt from SysTick timer
  * @return	Nothing
@@ -232,7 +249,8 @@ int main(void)
 	fAlarmTimeMatched = 0;
 	RTC_TIME_T FullTime;
 	food_t VectorFood[3];
-	int i;
+	//int i;
+	uint8_t pos=0;
 	SystemCoreClockUpdate();
 	Board_Init();
 
@@ -272,14 +290,11 @@ int main(void)
 	Chip_RTC_SetFullTime(LPC_RTC, &FullTime);
 	VectorFoodInit(VectorFood, FullTime);
 	/* Set ALARM time for 14:00:20 am */
-	//FullTime.time[RTC_TIMETYPE_SECOND]  = 5;
-	/*FullTime.time[RTC_TIMETYPE_HOUR]    = 9;*/
+
 	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 15;
 	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 30;
 	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 25;
 	Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[0].clock));
-	//Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
-
 
 	/* Enable matching for alarm for second, minute, hour fields only */
 	Chip_RTC_AlarmIntConfig(LPC_RTC, RTC_AMR_CIIR_IMSEC | RTC_AMR_CIIR_IMMIN | RTC_AMR_CIIR_IMHOUR, ENABLE);
@@ -297,11 +312,10 @@ int main(void)
 
 	while (1) {
 		__WFI();
-		//toggle_servo ();
 		if(fAlarmTimeMatched){
 
 			fAlarmTimeMatched = false;
-			Chip_SCTPWM_Start(LPC_SCT);
+			/*Chip_SCTPWM_Start(LPC_SCT);
 			for(i=0;i<3;i++){
 				toggle_servo ();
 				tick_ct=0;
@@ -309,9 +323,8 @@ int main(void)
 					__WFI();
 				}
 			}
-			Chip_SCTPWM_Stop(LPC_SCT); // con esto puedo apagar el pwm
-			set_new_alarm(VectorFood, 1);
-			//Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[1].clock));
+			Chip_SCTPWM_Stop(LPC_SCT);*/ // con esto puedo apagar el pwm
+			ServirComida(VectorFood,&pos);
 		}
 	}
 }
