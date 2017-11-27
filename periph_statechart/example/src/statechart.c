@@ -100,7 +100,8 @@ int main(void)
 	/* Generic Initialization */
 	fAlarmTimeMatched = 0;
 	RTC_TIME_T FullTime;
-	//RTC_TIME_T VectorAlarm[3];
+	//food_t VectorAlarm[3];
+	food_t VectorFood[3];
 	int i;
 	SystemCoreClockUpdate();
 	Board_Init();
@@ -140,15 +141,16 @@ int main(void)
 	FullTime.time[RTC_TIMETYPE_YEAR]    = 2017;
 
 	Chip_RTC_SetFullTime(LPC_RTC, &FullTime);
-
+	VectorFoodInit(VectorFood, FullTime);
 	/* Set ALARM time for 14:00:20 am */
 	//VectorAlarm[1].time[RTC_TIMETYPE_SECOND]  = 5;
 	//VectoAlarm[2].time[RTC_TIMETYPE_SECOND]  = 10;
 	//VectoAlarm[3].time[RTC_TIMETYPE_SECOND]  = 5;
-	FullTime.time[RTC_TIMETYPE_SECOND]  = 5;
+	//FullTime.time[RTC_TIMETYPE_SECOND]  = 5;
 	/*FullTime.time[RTC_TIMETYPE_HOUR]    = 9;*/
-	//Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorAlarm[1]));
-	Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
+	 VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 5;
+	 Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[1].clock));
+	//Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
 
 
 	/* Enable matching for alarm for second, minute, hour fields only */
