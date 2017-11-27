@@ -79,8 +79,8 @@ void SysTick_Handler(void)
 {
 	/* This is only used to wakeup up the device from sleep */
 
-	    tick_ct += 1;
-		if ((tick_ct % 150) == 0) toggle_flag();
+	tick_ct += 1;
+	if ((tick_ct % 150) == 0) toggle_flag();
 
 }
 void SCT_IRQHandler(void){
@@ -131,7 +131,7 @@ int main(void)
 	SysTick_Config(SystemCoreClock / TICKRATE_HZ);
 
 	/*CONFIGURACION REAL CLOCK*/
-/*
+	/*
 
 	Chip_RTC_Init(LPC_RTC);
 
@@ -147,32 +147,32 @@ int main(void)
 
 	Chip_RTC_SetFullTime(LPC_RTC, &FullTime);
 
-	  /* Set ALARM time for 14:00:20 am */
+	/* Set ALARM time for 14:00:20 am */
 	//VectorAlarm[1].time[RTC_TIMETYPE_SECOND]  = 5;
 	//VectoAlarm[2].time[RTC_TIMETYPE_SECOND]  = 10;
 	//VectoAlarm[3].time[RTC_TIMETYPE_SECOND]  = 5;
-		FullTime.time[RTC_TIMETYPE_SECOND]  = 5;
-		/*FullTime.time[RTC_TIMETYPE_HOUR]    = 9;*/
+	FullTime.time[RTC_TIMETYPE_SECOND]  = 5;
+	/*FullTime.time[RTC_TIMETYPE_HOUR]    = 9;*/
 	//Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorAlarm[1]));
 	Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
 
 
-		/* Enable matching for alarm for second, minute, hour fields only */
-		Chip_RTC_AlarmIntConfig(LPC_RTC, RTC_AMR_CIIR_IMSEC | RTC_AMR_CIIR_IMMIN | RTC_AMR_CIIR_IMHOUR, ENABLE);
+	/* Enable matching for alarm for second, minute, hour fields only */
+	Chip_RTC_AlarmIntConfig(LPC_RTC, RTC_AMR_CIIR_IMSEC | RTC_AMR_CIIR_IMMIN | RTC_AMR_CIIR_IMHOUR, ENABLE);
 
-			/* Clear interrupt pending */
-			Chip_RTC_ClearIntPending(LPC_RTC, RTC_INT_COUNTER_INCREASE | RTC_INT_ALARM);
+	/* Clear interrupt pending */
+	Chip_RTC_ClearIntPending(LPC_RTC, RTC_INT_COUNTER_INCREASE | RTC_INT_ALARM);
 
-			/* Enable RTC interrupt in NVIC */
-			NVIC_EnableIRQ((IRQn_Type) RTC_IRQn);
+	/* Enable RTC interrupt in NVIC */
+	NVIC_EnableIRQ((IRQn_Type) RTC_IRQn);
 
-			/* Enable RTC (starts increase the tick counter and second counter register) */
-			Chip_RTC_Enable(LPC_RTC, ENABLE);
+	/* Enable RTC (starts increase the tick counter and second counter register) */
+	Chip_RTC_Enable(LPC_RTC, ENABLE);
 
 
 
 	while (1) {
-	  	__WFI();
+		__WFI();
 		//toggle_servo ();
 		if(fAlarmTimeMatched){
 			fAlarmTimeMatched = false;
@@ -180,10 +180,10 @@ int main(void)
 				toggle_servo ();
 				tick_ct=0;
 				while(tick_ct<150){
-				__WFI();
+					__WFI();
 				}
 			}
-		Chip_SCTPWM_Stop(LPC_SCT); // con esto puedo apagar el pwm
+			Chip_SCTPWM_Stop(LPC_SCT); // con esto puedo apagar el pwm
 		}
 	}
 }
