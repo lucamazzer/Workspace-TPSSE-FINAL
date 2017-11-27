@@ -32,9 +32,9 @@
 #include "board.h"
 #include "funciones.h"
 
-static volatile bool fIntervalReached;
+/*static volatile bool fIntervalReached;
 static volatile bool fAlarmTimeMatched;
-static volatile bool On0, On1;
+static volatile bool On0, On1;*/
 /*****************************************************************************
  * Private functions
  ****************************************************************************/
@@ -54,7 +54,17 @@ static void showTime(RTC_TIME_T *pTime)
  * Public functions
  ****************************************************************************/
 
+void toggle_servo (void){
 
+	if (ServoFlag== false) Chip_SCTPWM_SetDutyCycle(LPC_SCT, 1, Chip_SCTPWM_GetTicksPerCycle(LPC_SCT)*DUTY_CYCLE_full );
+	if (ServoFlag== true) Chip_SCTPWM_SetDutyCycle(LPC_SCT, 1, Chip_SCTPWM_GetTicksPerCycle(LPC_SCT)*DUTY_CYCLE );
+}
+
+void toggle_flag(void){
+
+	if(ServoFlag== false) ServoFlag=true;
+	else ServoFlag=false;
+}
 
 void VectorFoodInit(food_t * VectorFood, RTC_TIME_T FullTime)
 { int i;

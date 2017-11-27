@@ -21,7 +21,12 @@ typedef struct{
 #define DUTY_CYCLE 90/100	//Duty Cycle configurado 180 grados
 #define DUTY_CYCLE_full 98/100	//Duty Cycle configurado 0 grados
 
-
+static volatile bool fIntervalReached;
+static volatile bool fAlarmTimeMatched;
+static volatile bool On0, On1;
+volatile bool ServoFlag=false;
+static uint32_t tick_ct = 0;
+static volatile bool fAlarmTimeMatched;
 /*****************************************************************************
  * Public types/enumerations/variables
  ****************************************************************************/
@@ -39,5 +44,7 @@ void set_new_alarm(food_t * AlarmVector, uint8_t pos);
 void swap(RTC_TIME_T * AlarmVector, uint8_t pos1,uint8_t pos2);
 void VAlarm_ordenar(RTC_TIME_T * AlarmVector);
 int RTC(void); /* ejemplo de uso de rtc*/
+void toggle_flag(void);
+void toggle_flag(void);
 
 #endif /* FUNCIONES_H_ */

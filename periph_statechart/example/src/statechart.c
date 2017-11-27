@@ -30,7 +30,7 @@
  */
 
 #include "board.h"
-#include "funciones.h"
+//#include "funciones.h"
 /*****************************************************************************
  * Private types/enumerations/variables
  ****************************************************************************/
@@ -45,6 +45,23 @@ static volatile bool On0, On1;
 volatile bool ServoFlag=false;
 static uint32_t tick_ct = 0;
 static volatile bool fAlarmTimeMatched;
+
+typedef struct{
+
+	RTC_TIME_T clock;
+	uint8_t food;
+	bool init;
+
+}food_t;
+
+#define SCT_PWM_RATE   50        /* PWM frequency 50 Hz */
+/* Systick timer tick rate, to change duty cycle */
+#define TICKRATE_HZ     100        /* 1 ms Tick rate */
+#define DUTY_CYCLE 90/100	//Duty Cycle configurado 180 grados
+#define DUTY_CYCLE_full 98/100	//Duty Cycle configurado 0 grados
+#define MAX_POS 3
+
+
 /*****************************************************************************
  * Private functions
  ****************************************************************************/
@@ -53,6 +70,8 @@ static volatile bool fAlarmTimeMatched;
 /*****************************************************************************
  * Public functions
  ****************************************************************************/
+/* FUNCIONES PARA EL SERVO Y PWM*/
+
 void toggle_servo (void){
 
 	if (ServoFlag== false) Chip_SCTPWM_SetDutyCycle(LPC_SCT, 1, Chip_SCTPWM_GetTicksPerCycle(LPC_SCT)*DUTY_CYCLE_full );
@@ -63,6 +82,109 @@ void toggle_flag(void){
 
 	if(ServoFlag== false) ServoFlag=true;
 	else ServoFlag=false;
+}
+
+
+/*FUNCIONES PARA EL RTC*/
+
+
+void VectorFoodInit(food_t * VectorFood, RTC_TIME_T FullTime)
+{ int i;
+
+	for(i=0;i< MAX_POS; i++)
+	{
+		VectorFood[i].clock.time[RTC_TIMETYPE_SECOND]=FullTime.time[RTC_TIMETYPE_SECOND];
+		VectorFood[i].clock.time[RTC_TIMETYPE_MINUTE]=FullTime.time[RTC_TIMETYPE_MINUTE];
+		VectorFood[i].clock.time[RTC_TIMETYPE_HOUR]=FullTime.time[RTC_TIMETYPE_HOUR];
+		VectorFood[i].clock.time[RTC_TIMETYPE_DAYOFMONTH]=FullTime.time[RTC_TIMETYPE_DAYOFMONTH];
+		VectorFood[i].clock.time[RTC_TIMETYPE_DAYOFWEEK]=FullTime.time[RTC_TIMETYPE_DAYOFWEEK];
+		VectorFood[i].clock.time[RTC_TIMETYPE_DAYOFYEAR]=FullTime.time[RTC_TIMETYPE_DAYOFYEAR];
+		VectorFood[i].clock.time[RTC_TIMETYPE_MONTH]=FullTime.time[RTC_TIMETYPE_MONTH];
+		VectorFood[i].clock.time[RTC_TIMETYPE_YEAR]=FullTime.time[RTC_TIMETYPE_YEAR];
+		VectorFood[i].food=0;
+		VectorFood[i].init=FALSE;
+	}
+
+}
+
+void set_new_alarm(food_t * AlarmVector, uint8_t pos){
+	RTC_TIME_T Alarm;
+
+	if(pos<MAX_POS){
+	    Alarm.time[RTC_TIMETYPE_SECOND]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_SECOND];
+	    Alarm.time[RTC_TIMETYPE_MINUTE]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_MINUTE];
+	    Alarm.time[RTC_TIMETYPE_HOUR]    = (AlarmVector[pos].clock).time[RTC_TIMETYPE_HOUR];
+		Chip_RTC_SetFullAlarmTime(LPC_RTC, &Alarm);
+	}
+}
+void swap(RTC_TIME_T * AlarmVector, uint8_t pos1,uint8_t pos2){
+
+
+}
+
+void VAlarm_ordenar(RTC_TIME_T * AlarmVector){
+
+	uint8_t pos1=0;
+	uint8_t pos2=1;
+	uint8_t pos3=2;
+
+	if ((AlarmVector[pos1]).time[RTC_TIMETYPE_HOUR] < (AlarmVector[pos2]).time[RTC_TIMETYPE_HOUR] )
+	{
+		swap(AlarmVector,pos1,pos2);
+	}
+	else
+	{
+
+		if ((AlarmVector[pos1]).time[RTC_TIMETYPE_HOUR] > (AlarmVector[pos2]).time[RTC_TIMETYPE_HOUR] )
+		{
+			swap(AlarmVector,pos2,pos1);
+		}
+		else
+		{
+			if ((AlarmVector[pos1]).time[RTC_TIMETYPE_MINUTE] < (AlarmVector[pos2]).time[RTC_TIMETYPE_MINUTE] )
+			{
+					swap(AlarmVector,pos1,pos2);
+			}
+			else
+			{
+				if ((AlarmVector[pos1]).time[RTC_TIMETYPE_MINUTE] > (AlarmVector[pos2]).time[RTC_TIMETYPE_MINUTE] )
+				{
+					swap(AlarmVector,pos2,pos1);
+				}
+			}
+
+		}
+	}
+	// swap 2 con 3
+
+	if ((AlarmVector[pos3]).time[RTC_TIMETYPE_HOUR] < (AlarmVector[pos2]).time[RTC_TIMETYPE_HOUR] )
+	{
+				swap(AlarmVector,pos3,pos2);
+	}
+	else
+	{
+
+		if ((AlarmVector[pos3]).time[RTC_TIMETYPE_HOUR] > (AlarmVector[pos2]).time[RTC_TIMETYPE_HOUR] )
+		{
+			swap(AlarmVector,pos2,pos3);
+		}
+		else
+		{
+			if ((AlarmVector[pos3]).time[RTC_TIMETYPE_MINUTE] < (AlarmVector[pos2]).time[RTC_TIMETYPE_MINUTE] )
+			{
+				swap(AlarmVector,pos3,pos2);
+			}
+			else
+			{
+				if ((AlarmVector[pos3]).time[RTC_TIMETYPE_MINUTE] > (AlarmVector[pos2]).time[RTC_TIMETYPE_MINUTE] )
+				{
+					swap(AlarmVector,pos2,pos3);
+				}
+			}
+
+		}
+
+     }
 }
 
 /**
