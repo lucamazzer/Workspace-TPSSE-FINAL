@@ -111,9 +111,14 @@ void set_new_alarm(food_t * AlarmVector, uint8_t pos){
 	RTC_TIME_T Alarm;
 
 	if(pos<MAX_POS){
-	    Alarm.time[RTC_TIMETYPE_SECOND]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_SECOND];
-	    Alarm.time[RTC_TIMETYPE_MINUTE]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_MINUTE];
-	    Alarm.time[RTC_TIMETYPE_HOUR]    = (AlarmVector[pos].clock).time[RTC_TIMETYPE_HOUR];
+		Alarm.time[RTC_TIMETYPE_SECOND]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_SECOND];
+		Alarm.time[RTC_TIMETYPE_MINUTE]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_MINUTE];
+		Alarm.time[RTC_TIMETYPE_HOUR]    = (AlarmVector[pos].clock).time[RTC_TIMETYPE_HOUR];
+		Alarm.time[RTC_TIMETYPE_DAYOFMONTH]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_DAYOFMONTH];
+		Alarm.time[RTC_TIMETYPE_DAYOFWEEK]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_DAYOFWEEK];
+		Alarm.time[RTC_TIMETYPE_DAYOFYEAR]    = (AlarmVector[pos].clock).time[RTC_TIMETYPE_DAYOFYEAR];
+		Alarm.time[RTC_TIMETYPE_MONTH]    = (AlarmVector[pos].clock).time[RTC_TIMETYPE_MONTH];
+		Alarm.time[RTC_TIMETYPE_YEAR]    = (AlarmVector[pos].clock).time[RTC_TIMETYPE_YEAR];
 		Chip_RTC_SetFullAlarmTime(LPC_RTC, &Alarm);
 	}
 }
@@ -238,9 +243,8 @@ int main(void)
 	Chip_SCTPWM_SetOutPin(LPC_SCT, 1, 2);
 
 	/* Start with 0% duty cycle */
-	//Chip_SCTPWM_SetDutyCycle(LPC_SCT, 1, Chip_SCTPWM_GetTicksPerCycle(LPC_SCT)*DUTY_CYCLE_full );
+	//Chip_SCTPWM_SetDutyCycle(LPC_SCT, 1, Chip_SCTPWM_GetTicksPerCycle(LPC_SCT)*DUTY_CYCLE );
 	//Chip_SCTPWM_Start(LPC_SCT);
-
 	//Chip_SCT_EnableEventInt(LPC_SCT, SCT_EVT_1);
 
 	/* Enable SysTick Timer */
@@ -266,10 +270,10 @@ int main(void)
 	/* Set ALARM time for 14:00:20 am */
 	//FullTime.time[RTC_TIMETYPE_SECOND]  = 5;
 	/*FullTime.time[RTC_TIMETYPE_HOUR]    = 9;*/
-	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 5;
-	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 15;
-	VectorFood[3].clock.time[RTC_TIMETYPE_SECOND]  = 25;
-	Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[1].clock));
+	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 15;
+	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 30;
+	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 25;
+	Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[0].clock));
 	//Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
 
 
@@ -294,7 +298,7 @@ int main(void)
 
 			fAlarmTimeMatched = false;
 			Chip_SCTPWM_Start(LPC_SCT);
-			for(i=0;i<7;i++){
+			for(i=0;i<3;i++){
 				toggle_servo ();
 				tick_ct=0;
 				while(tick_ct<150){
@@ -302,7 +306,8 @@ int main(void)
 				}
 			}
 			Chip_SCTPWM_Stop(LPC_SCT); // con esto puedo apagar el pwm
-			set_new_alarm(VectorFood, 2);
+			set_new_alarm(VectorFood, 1);
+			//Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[1].clock));
 		}
 	}
 }
