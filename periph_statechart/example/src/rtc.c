@@ -44,7 +44,7 @@ typedef struct{
 	uint32_t food;
 	bool init;
 
-};
+}food_t;
 /*****************************************************************************
  * Public types/enumerations/variables
  ****************************************************************************/
@@ -73,7 +73,7 @@ static void showTime(RTC_TIME_T *pTime)
  * @return	Nothing
  */
 
-void VectorFoodInit(RTC_TIME_T * VectorFood, RTC_TIME_T FullTime)
+void VectorFoodInit(food_t * VectorFood, RTC_TIME_T FullTime)
 {
 
 	for(i=0;i< MAX_POS; i++)
