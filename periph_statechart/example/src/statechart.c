@@ -51,6 +51,7 @@ typedef struct{
 	bool init;
 
 }food_t;
+typedef enum hora{mayor, menor }status_time;
 
 #define SCT_PWM_RATE   50        /* PWM frequency 50 Hz */
 
@@ -203,6 +204,79 @@ void VAlarm_ordenar(RTC_TIME_T * AlarmVector){
      }
 }
 
+
+
+status_time Check_Time(RTC_TIME_T time1 , RTC_TIME_T time2) // chequea si time1 es mayor o menor que time2
+{
+	if (time1.time[RTC_TIMETYPE_HOUR]>time2.time[RTC_TIMETYPE_HOUR])
+	{
+		return mayor;
+	}
+	else
+	{
+		if(time1.time[RTC_TIMETYPE_HOUR]<time2.time[RTC_TIMETYPE_HOUR])
+		{
+			return menor;
+		}
+		else
+		{
+			if(time1.time[RTC_TIMETYPE_HOUR]==time2.time[RTC_TIMETYPE_HOUR])
+			{
+				if (time1.time[RTC_TIMETYPE_MINUTE]>time2.time[RTC_TIMETYPE_MINUTE])
+				{
+					return mayor;
+				}
+				else
+				{
+					if(time1.time[RTC_TIMETYPE_MINUTE]<time2.time[RTC_TIMETYPE_MINUTE])
+					{
+						return menor;
+					}
+					else
+					{
+						if(time1.time[RTC_TIMETYPE_MINUTE]==time2.time[RTC_TIMETYPE_MINUTE])
+						{
+							if(time1.time[RTC_TIMETYPE_SECOND]<time2.time[RTC_TIMETYPE_SECOND])
+							{
+								return menor;
+							}
+							else return mayor;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+void Set_next_Alarm(food_t * FoodVector){
+
+	RTC_TIME_T FullTime;
+	Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
+	uint8_t NextAlarm=0;
+	uint8_t pivot=0;
+
+	if(FoodVector[pivot].clock.time[RTC_TIMETYPE_HOUR]>FullTime.time[RTC_TIMETYPE_HOUR])
+	{	NextAlarm=pivot;
+		pivot++;
+		if(FoodVector[NextAlarm].clock.time[RTC_TIMETYPE_HOUR]>FoodVector[pivot].clock.time[RTC_TIMETYPE_HOUR])
+		{   NextAlarm=pivot;
+			pivot++;
+			if(FoodVector[NextAlarm].clock.time[RTC_TIMETYPE_HOUR]>FoodVector[pivot].clock.time[RTC_TIMETYPE_HOUR])
+			{
+				NextAlarm=pivot;
+			}
+		}
+		else
+		{
+
+
+		}
+
+	}
+
+
+}
 
 void ServirComida (food_t * Comida, uint8_t * position){
 	int i;
