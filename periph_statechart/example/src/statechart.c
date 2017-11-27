@@ -39,9 +39,7 @@
 /*****************************************************************************
  * Public types/enumerations/variables
  ****************************************************************************/
-static volatile bool fIntervalReached;
 static volatile bool fAlarmTimeMatched;
-static volatile bool On0, On1;
 volatile bool ServoFlag=false;
 static uint32_t tick_ct = 0;
 static volatile bool fAlarmTimeMatched;
@@ -55,6 +53,7 @@ typedef struct{
 }food_t;
 
 #define SCT_PWM_RATE   50        /* PWM frequency 50 Hz */
+
 /* Systick timer tick rate, to change duty cycle */
 #define TICKRATE_HZ     100        /* 1 ms Tick rate */
 #define DUTY_CYCLE 90/100	//Duty Cycle configurado 180 grados
@@ -70,7 +69,12 @@ typedef struct{
 /*****************************************************************************
  * Public functions
  ****************************************************************************/
-/* FUNCIONES PARA EL SERVO Y PWM*/
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * *
+ *  * * *  FUNCIONES PARA EL SERVO Y PWM* * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * *  * * * * * * * * * */
 
 void toggle_servo (void){
 
@@ -85,8 +89,11 @@ void toggle_flag(void){
 }
 
 
-/*FUNCIONES PARA EL RTC*/
-
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * *
+ *  * * * * FUNCIONES PARA EL RTC* * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * *  * * * * * * * * * */
 
 void VectorFoodInit(food_t * VectorFood, RTC_TIME_T FullTime)
 { int i;
@@ -213,10 +220,14 @@ void ServirComida (food_t * Comida, uint8_t * position){
 
 }
 
-/**
- * @brief	Handle interrupt from SysTick timer
- * @return	Nothing
- */
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * *
+ *  * * * * HANDLES DE INTERRUPCIONES * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * *  * * * * * * * * * */
+
+
+
 void SysTick_Handler(void)
 {
 	/* This is only used to wakeup up the device from sleep */
@@ -229,6 +240,9 @@ void SCT_IRQHandler(void){
 
 }
 
+
+
+
 void RTC_IRQHandler(void)
 {
 	/* Check for alarm match */
@@ -240,16 +254,13 @@ void RTC_IRQHandler(void)
 }
 
 
-/* Example entry point */
-
 
 int main(void)
 {
 	/* Generic Initialization */
 	fAlarmTimeMatched = 0;
 	RTC_TIME_T FullTime;
-	food_t VectorFood[3];
-	//int i;
+	food_t VectorFood[MAX_POS];
 	uint8_t pos=0;
 	SystemCoreClockUpdate();
 	Board_Init();
@@ -288,12 +299,16 @@ int main(void)
 	FullTime.time[RTC_TIMETYPE_YEAR]    = 2017;
 
 	Chip_RTC_SetFullTime(LPC_RTC, &FullTime);
-	VectorFoodInit(VectorFood, FullTime);
-	/* Set ALARM time for 14:00:20 am */
 
-	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 15;
+	/*inicializo el vector de comida con el horario del momento!*/
+	VectorFoodInit(VectorFood, FullTime);
+
+	/* Set ALARM time */
+
+	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 15; // prueba d ealarma
 	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 30;
 	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 25;
+
 	Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[0].clock));
 
 	/* Enable matching for alarm for second, minute, hour fields only */
@@ -313,17 +328,7 @@ int main(void)
 	while (1) {
 		__WFI();
 		if(fAlarmTimeMatched){
-
 			fAlarmTimeMatched = false;
-			/*Chip_SCTPWM_Start(LPC_SCT);
-			for(i=0;i<3;i++){
-				toggle_servo ();
-				tick_ct=0;
-				while(tick_ct<150){
-					__WFI();
-				}
-			}
-			Chip_SCTPWM_Stop(LPC_SCT);*/ // con esto puedo apagar el pwm
 			ServirComida(VectorFood,&pos);
 		}
 	}
