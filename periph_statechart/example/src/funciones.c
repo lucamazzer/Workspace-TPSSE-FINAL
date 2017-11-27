@@ -32,7 +32,9 @@
 #include "board.h"
 #include "funciones.h"
 
-
+static volatile bool fIntervalReached;
+static volatile bool fAlarmTimeMatched;
+static volatile bool On0, On1;
 /*****************************************************************************
  * Private functions
  ****************************************************************************/
@@ -55,7 +57,7 @@ static void showTime(RTC_TIME_T *pTime)
 
 
 void VectorFoodInit(food_t * VectorFood, RTC_TIME_T FullTime)
-{
+{ int i;
 
 	for(i=0;i< MAX_POS; i++)
 	{

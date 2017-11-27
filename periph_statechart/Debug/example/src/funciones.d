@@ -1,5 +1,5 @@
-example/src/statechart.o example/src/statechart.d: \
- ../example/src/statechart.c \
+example/src/funciones.o example/src/funciones.d: \
+ ../example/src/funciones.c \
  C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\inc/board.h \
  C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\inc/chip.h \
  C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\inc/sys_config.h \

@@ -34,12 +34,17 @@
 /*****************************************************************************
  * Private types/enumerations/variables
  ****************************************************************************/
-
+#define BOARD_NXP_LPCXPRESSO_4337
 
 /*****************************************************************************
  * Public types/enumerations/variables
  ****************************************************************************/
-
+static volatile bool fIntervalReached;
+static volatile bool fAlarmTimeMatched;
+static volatile bool On0, On1;
+volatile bool ServoFlag=false;
+static uint32_t tick_ct = 0;
+static volatile bool fAlarmTimeMatched;
 /*****************************************************************************
  * Private functions
  ****************************************************************************/
@@ -95,7 +100,7 @@ int main(void)
 	/* Generic Initialization */
 	fAlarmTimeMatched = 0;
 	RTC_TIME_T FullTime;
-	RTC_TIME_T VectorAlarm[3];
+	//RTC_TIME_T VectorAlarm[3];
 	int i;
 	SystemCoreClockUpdate();
 	Board_Init();
@@ -120,7 +125,7 @@ int main(void)
 	SysTick_Config(SystemCoreClock / TICKRATE_HZ);
 
 	/*CONFIGURACION REAL CLOCK*/
-	/*
+
 
 	Chip_RTC_Init(LPC_RTC);
 

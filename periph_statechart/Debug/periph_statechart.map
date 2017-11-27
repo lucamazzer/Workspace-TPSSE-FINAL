@@ -1,7 +1,7 @@
 Archive member included to satisfy reference by file (symbol)
 
 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
-                              ./example/src/rtc.o (Board_UARTPutSTR)
+                              ./example/src/funciones.o (Board_UARTPutSTR)
 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
                               ./example/src/sysinit.o (Board_SystemInit)
 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(wm8904.o)
@@ -17,7 +17,7 @@ C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\libl
 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(i2c_18xx_43xx.o)
                               C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(wm8904.o) (Chip_I2C_EventHandlerPolling)
 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
-                              ./example/src/rtc.o (Chip_RTC_Init)
+                              ./example/src/funciones.o (Chip_RTC_Init)
 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_18xx_43xx.o)
                               ./example/src/statechart.o (Chip_SCT_Init)
 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
@@ -37,7 +37,7 @@ c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/
 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(memset.o)
                               C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o) (memset)
 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(fpprintf.o)
-                              ./example/src/rtc.o (printf)
+                              ./example/src/funciones.o (printf)
 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(initio.o)
                               c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(_cr__main.o) (_initio)
 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(printf.o)
@@ -257,146 +257,151 @@ Discarded input sections
  .data          0x00000000        0x0 ./example/src/cr_startup_lpc43xx.o
  .bss           0x00000000        0x0 ./example/src/cr_startup_lpc43xx.o
  .debug_macro   0x00000000      0x8a4 ./example/src/cr_startup_lpc43xx.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .group         0x00000000        0x8 ./example/src/rtc.o
- .text          0x00000000        0x0 ./example/src/rtc.o
- .data          0x00000000        0x0 ./example/src/rtc.o
- .bss           0x00000000        0x0 ./example/src/rtc.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/funciones.o
+ .text          0x00000000        0x0 ./example/src/funciones.o
+ .data          0x00000000        0x0 ./example/src/funciones.o
+ .bss           0x00000000        0x0 ./example/src/funciones.o
  .text.NVIC_EnableIRQ
-                0x00000000       0x34 ./example/src/rtc.o
+                0x00000000       0x34 ./example/src/funciones.o
  .text.Chip_RTC_ClearIntPending
-                0x00000000       0x1c ./example/src/rtc.o
+                0x00000000       0x1c ./example/src/funciones.o
  .bss.fIntervalReached
-                0x00000000        0x1 ./example/src/rtc.o
+                0x00000000        0x1 ./example/src/funciones.o
  .bss.fAlarmTimeMatched
-                0x00000000        0x1 ./example/src/rtc.o
- .bss.On0       0x00000000        0x1 ./example/src/rtc.o
- .bss.On1       0x00000000        0x1 ./example/src/rtc.o
- .rodata        0x00000000       0x3b ./example/src/rtc.o
+                0x00000000        0x1 ./example/src/funciones.o
+ .bss.On0       0x00000000        0x1 ./example/src/funciones.o
+ .bss.On1       0x00000000        0x1 ./example/src/funciones.o
+ .rodata        0x00000000       0x3b ./example/src/funciones.o
  .text.showTime
-                0x00000000       0x40 ./example/src/rtc.o
+                0x00000000       0x40 ./example/src/funciones.o
+ .text.VectorFoodInit
+                0x00000000      0x100 ./example/src/funciones.o
  .text.set_new_alarm
-                0x00000000       0x50 ./example/src/rtc.o
- .text.swap     0x00000000       0x1c ./example/src/rtc.o
+                0x00000000       0x50 ./example/src/funciones.o
+ .text.swap     0x00000000       0x1c ./example/src/funciones.o
  .text.VAlarm_ordenar
-                0x00000000      0x148 ./example/src/rtc.o
- .text.RTC      0x00000000      0x11c ./example/src/rtc.o
- .debug_info    0x00000000      0xba8 ./example/src/rtc.o
- .debug_abbrev  0x00000000      0x211 ./example/src/rtc.o
+                0x00000000      0x148 ./example/src/funciones.o
+ .text.RTC      0x00000000      0x11c ./example/src/funciones.o
+ .debug_info    0x00000000      0xc3d ./example/src/funciones.o
+ .debug_abbrev  0x00000000      0x211 ./example/src/funciones.o
  .debug_aranges
-                0x00000000       0x50 ./example/src/rtc.o
- .debug_ranges  0x00000000       0x40 ./example/src/rtc.o
- .debug_macro   0x00000000      0x316 ./example/src/rtc.o
- .debug_macro   0x00000000      0x8a4 ./example/src/rtc.o
- .debug_macro   0x00000000       0x10 ./example/src/rtc.o
- .debug_macro   0x00000000       0x10 ./example/src/rtc.o
- .debug_macro   0x00000000      0x12d ./example/src/rtc.o
- .debug_macro   0x00000000      0x5b2 ./example/src/rtc.o
- .debug_macro   0x00000000       0x22 ./example/src/rtc.o
- .debug_macro   0x00000000       0x7b ./example/src/rtc.o
- .debug_macro   0x00000000       0x28 ./example/src/rtc.o
- .debug_macro   0x00000000       0x3b ./example/src/rtc.o
- .debug_macro   0x00000000       0x2d ./example/src/rtc.o
- .debug_macro   0x00000000       0x42 ./example/src/rtc.o
- .debug_macro   0x00000000      0xd39 ./example/src/rtc.o
- .debug_macro   0x00000000      0x2bc ./example/src/rtc.o
- .debug_macro   0x00000000      0x112 ./example/src/rtc.o
- .debug_macro   0x00000000       0x11 ./example/src/rtc.o
- .debug_macro   0x00000000       0x2a ./example/src/rtc.o
- .debug_macro   0x00000000       0x16 ./example/src/rtc.o
- .debug_macro   0x00000000      0x2e6 ./example/src/rtc.o
- .debug_macro   0x00000000       0x82 ./example/src/rtc.o
- .debug_macro   0x00000000      0x13d ./example/src/rtc.o
- .debug_macro   0x00000000      0x198 ./example/src/rtc.o
- .debug_macro   0x00000000       0x34 ./example/src/rtc.o
- .debug_macro   0x00000000       0x58 ./example/src/rtc.o
- .debug_macro   0x00000000      0x236 ./example/src/rtc.o
- .debug_macro   0x00000000      0x572 ./example/src/rtc.o
- .debug_macro   0x00000000       0x16 ./example/src/rtc.o
- .debug_macro   0x00000000      0x18a ./example/src/rtc.o
- .debug_macro   0x00000000       0x88 ./example/src/rtc.o
- .debug_macro   0x00000000      0x1b9 ./example/src/rtc.o
- .debug_macro   0x00000000      0x1da ./example/src/rtc.o
- .debug_macro   0x00000000       0x40 ./example/src/rtc.o
- .debug_macro   0x00000000       0x1c ./example/src/rtc.o
- .debug_macro   0x00000000       0x2e ./example/src/rtc.o
- .debug_macro   0x00000000       0x2e ./example/src/rtc.o
- .debug_macro   0x00000000       0x22 ./example/src/rtc.o
- .debug_macro   0x00000000      0x201 ./example/src/rtc.o
- .debug_macro   0x00000000       0xe0 ./example/src/rtc.o
- .debug_macro   0x00000000      0x34c ./example/src/rtc.o
- .debug_macro   0x00000000       0xdc ./example/src/rtc.o
- .debug_macro   0x00000000       0xc4 ./example/src/rtc.o
- .debug_macro   0x00000000       0x94 ./example/src/rtc.o
- .debug_macro   0x00000000       0xb8 ./example/src/rtc.o
- .debug_macro   0x00000000       0x4c ./example/src/rtc.o
- .debug_macro   0x00000000       0x16 ./example/src/rtc.o
- .debug_macro   0x00000000      0x328 ./example/src/rtc.o
- .debug_macro   0x00000000       0x3a ./example/src/rtc.o
- .debug_macro   0x00000000       0xd0 ./example/src/rtc.o
- .debug_macro   0x00000000       0x18 ./example/src/rtc.o
- .debug_macro   0x00000000       0x22 ./example/src/rtc.o
- .debug_macro   0x00000000       0x40 ./example/src/rtc.o
- .debug_macro   0x00000000      0x121 ./example/src/rtc.o
- .debug_macro   0x00000000       0x9a ./example/src/rtc.o
- .debug_macro   0x00000000       0x20 ./example/src/rtc.o
- .debug_line    0x00000000      0x71d ./example/src/rtc.o
- .debug_str     0x00000000    0x16685 ./example/src/rtc.o
- .comment       0x00000000       0x6f ./example/src/rtc.o
- .debug_frame   0x00000000      0x118 ./example/src/rtc.o
+                0x00000000       0x58 ./example/src/funciones.o
+ .debug_ranges  0x00000000       0x48 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x319 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x8a4 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x10 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x10 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x12d ./example/src/funciones.o
+ .debug_macro   0x00000000      0x5b2 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x22 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x7b ./example/src/funciones.o
+ .debug_macro   0x00000000       0x28 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x3b ./example/src/funciones.o
+ .debug_macro   0x00000000       0x2d ./example/src/funciones.o
+ .debug_macro   0x00000000       0x42 ./example/src/funciones.o
+ .debug_macro   0x00000000      0xd39 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x2bc ./example/src/funciones.o
+ .debug_macro   0x00000000      0x112 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x11 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x2a ./example/src/funciones.o
+ .debug_macro   0x00000000       0x16 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x2e6 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x82 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x13d ./example/src/funciones.o
+ .debug_macro   0x00000000      0x198 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x34 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x58 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x236 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x572 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x16 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x18a ./example/src/funciones.o
+ .debug_macro   0x00000000       0x88 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x1b9 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x1da ./example/src/funciones.o
+ .debug_macro   0x00000000       0x40 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x1c ./example/src/funciones.o
+ .debug_macro   0x00000000       0x2e ./example/src/funciones.o
+ .debug_macro   0x00000000       0x2e ./example/src/funciones.o
+ .debug_macro   0x00000000       0x22 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x201 ./example/src/funciones.o
+ .debug_macro   0x00000000       0xe0 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x34c ./example/src/funciones.o
+ .debug_macro   0x00000000       0xdc ./example/src/funciones.o
+ .debug_macro   0x00000000       0xc4 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x94 ./example/src/funciones.o
+ .debug_macro   0x00000000       0xb8 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x4c ./example/src/funciones.o
+ .debug_macro   0x00000000       0x16 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x328 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x3a ./example/src/funciones.o
+ .debug_macro   0x00000000       0xd0 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x18 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x22 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x40 ./example/src/funciones.o
+ .debug_macro   0x00000000      0x121 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x9a ./example/src/funciones.o
+ .debug_macro   0x00000000       0x20 ./example/src/funciones.o
+ .debug_macro   0x00000000       0x28 ./example/src/funciones.o
+ .debug_line    0x00000000      0x78f ./example/src/funciones.o
+ .debug_str     0x00000000    0x16722 ./example/src/funciones.o
+ .comment       0x00000000       0x6f ./example/src/funciones.o
+ .debug_frame   0x00000000      0x144 ./example/src/funciones.o
  .ARM.attributes
-                0x00000000       0x37 ./example/src/rtc.o
+                0x00000000       0x37 ./example/src/funciones.o
+ .group         0x00000000        0x8 ./example/src/statechart.o
  .group         0x00000000        0x8 ./example/src/statechart.o
  .group         0x00000000        0x8 ./example/src/statechart.o
  .group         0x00000000        0x8 ./example/src/statechart.o
@@ -453,6 +458,10 @@ Discarded input sections
  .text          0x00000000        0x0 ./example/src/statechart.o
  .data          0x00000000        0x0 ./example/src/statechart.o
  .bss           0x00000000        0x0 ./example/src/statechart.o
+ .bss.fIntervalReached
+                0x00000000        0x1 ./example/src/statechart.o
+ .bss.On0       0x00000000        0x1 ./example/src/statechart.o
+ .bss.On1       0x00000000        0x1 ./example/src/statechart.o
  .debug_macro   0x00000000      0x8a4 ./example/src/statechart.o
  .debug_macro   0x00000000       0x10 ./example/src/statechart.o
  .debug_macro   0x00000000       0x10 ./example/src/statechart.o
@@ -506,6 +515,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x121 ./example/src/statechart.o
  .debug_macro   0x00000000       0x9a ./example/src/statechart.o
  .debug_macro   0x00000000       0x20 ./example/src/statechart.o
+ .debug_macro   0x00000000       0x28 ./example/src/statechart.o
  .group         0x00000000        0x8 ./example/src/sysinit.o
  .group         0x00000000        0x8 ./example/src/sysinit.o
  .group         0x00000000        0x8 ./example/src/sysinit.o
@@ -1223,8 +1233,6 @@ Discarded input sections
                 0x00000000       0x44 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
  .text.Chip_Clock_Enable
                 0x00000000       0x60 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
- .text.Chip_Clock_RTCEnable
-                0x00000000       0x2c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
  .text.Chip_Clock_Disable
                 0x00000000       0x60 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
  .text.Chip_Clock_StartPowerDown
@@ -1674,20 +1682,14 @@ Discarded input sections
  .text          0x00000000        0x0 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
  .data          0x00000000        0x0 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
  .bss           0x00000000        0x0 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
- .text.Chip_RTC_Init
-                0x00000000       0x64 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
  .text.Chip_RTC_DeInit
                 0x00000000       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
- .text.Chip_RTC_ResetClockTickCounter
-                0x00000000       0x48 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
  .text.Chip_RTC_CntIncrIntConfig
                 0x00000000       0x4c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
  .text.Chip_RTC_GetFullTime
                 0x00000000       0x58 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
  .text.Chip_RTC_GetFullAlarmTime
                 0x00000000       0x3c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
- .text.Chip_RTC_CalibCounterCmd
-                0x00000000       0x44 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
  .text.Chip_RTC_EV_GetFirstTimeStamp
                 0x00000000       0x78 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
  .text.Chip_RTC_EV_GetLastTimeStamp
@@ -2739,7 +2741,7 @@ Linker script and memory map
 LOAD ./example/src/src-gen/Prefix.o
 LOAD ./example/src/TimerTicks.o
 LOAD ./example/src/cr_startup_lpc43xx.o
-LOAD ./example/src/rtc.o
+LOAD ./example/src/funciones.o
 LOAD ./example/src/statechart.o
 LOAD ./example/src/sysinit.o
 LOAD C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a
@@ -2787,7 +2789,7 @@ END GROUP
  *(.rodata.$Flash2*)
  *(.rodata.$MFlashB512*)
 
-.text           0x1a000000     0x27cc
+.text           0x1a000000     0x28dc
  FILL mask 0xff
                 0x1a000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -2796,25 +2798,25 @@ END GROUP
                 0x1a000114                . = ALIGN (0x4)
                 0x1a000114                __section_table_start = .
                 0x1a000114                __data_section_table = .
-                0x1a000114        0x4 LONG 0x1a0027cc LOADADDR (.data)
+                0x1a000114        0x4 LONG 0x1a0028dc LOADADDR (.data)
                 0x1a000118        0x4 LONG 0x10000000 ADDR (.data)
                 0x1a00011c        0x4 LONG 0x0 SIZEOF (.data)
-                0x1a000120        0x4 LONG 0x1a0027cc LOADADDR (.data_RAM2)
+                0x1a000120        0x4 LONG 0x1a0028dc LOADADDR (.data_RAM2)
                 0x1a000124        0x4 LONG 0x10080000 ADDR (.data_RAM2)
                 0x1a000128        0x4 LONG 0x0 SIZEOF (.data_RAM2)
-                0x1a00012c        0x4 LONG 0x1a0027cc LOADADDR (.data_RAM3)
+                0x1a00012c        0x4 LONG 0x1a0028dc LOADADDR (.data_RAM3)
                 0x1a000130        0x4 LONG 0x20000000 ADDR (.data_RAM3)
                 0x1a000134        0x4 LONG 0x0 SIZEOF (.data_RAM3)
-                0x1a000138        0x4 LONG 0x1a0027cc LOADADDR (.data_RAM4)
+                0x1a000138        0x4 LONG 0x1a0028dc LOADADDR (.data_RAM4)
                 0x1a00013c        0x4 LONG 0x20008000 ADDR (.data_RAM4)
                 0x1a000140        0x4 LONG 0x0 SIZEOF (.data_RAM4)
-                0x1a000144        0x4 LONG 0x1a0027cc LOADADDR (.data_RAM5)
+                0x1a000144        0x4 LONG 0x1a0028dc LOADADDR (.data_RAM5)
                 0x1a000148        0x4 LONG 0x2000c000 ADDR (.data_RAM5)
                 0x1a00014c        0x4 LONG 0x0 SIZEOF (.data_RAM5)
                 0x1a000150                __data_section_table_end = .
                 0x1a000150                __bss_section_table = .
                 0x1a000150        0x4 LONG 0x10000000 ADDR (.bss)
-                0x1a000154        0x4 LONG 0x168 SIZEOF (.bss)
+                0x1a000154        0x4 LONG 0x164 SIZEOF (.bss)
                 0x1a000158        0x4 LONG 0x10080000 ADDR (.bss_RAM2)
                 0x1a00015c        0x4 LONG 0x0 SIZEOF (.bss_RAM2)
                 0x1a000160        0x4 LONG 0x20000000 ADDR (.bss_RAM3)
@@ -2934,311 +2936,323 @@ END GROUP
  .text.RTC_IRQHandler
                 0x1a000640       0x2c ./example/src/statechart.o
                 0x1a000640                RTC_IRQHandler
- .text.main     0x1a00066c      0x140 ./example/src/statechart.o
+ .text.main     0x1a00066c      0x134 ./example/src/statechart.o
                 0x1a00066c                main
  .text.SystemInit
-                0x1a0007ac       0x28 ./example/src/sysinit.o
-                0x1a0007ac                SystemInit
+                0x1a0007a0       0x28 ./example/src/sysinit.o
+                0x1a0007a0                SystemInit
  .text.Chip_SCU_PinMuxSet
-                0x1a0007d4       0x34 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a0007c8       0x34 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
  .text.Chip_ENET_RMIIEnable
-                0x1a000808       0x28 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a0007fc       0x28 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
  .text.Chip_GPIO_SetPinState
-                0x1a000830       0x38 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a000824       0x38 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
  .text.Chip_GPIO_SetPinDIROutput
-                0x1a000868       0x40 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a00085c       0x40 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
  .text.Chip_GPIO_SetPinDIRInput
-                0x1a0008a8       0x40 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a00089c       0x40 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
  .text.Chip_UART_TXEnable
-                0x1a0008e8       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a0008dc       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
  .text.Chip_UART_SendByte
-                0x1a000904       0x20 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a0008f8       0x20 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
  .text.Chip_UART_ConfigData
-                0x1a000924       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a000918       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
  .text.Chip_UART_ReadLineStatus
-                0x1a000940       0x18 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a000934       0x18 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
  .text.__sys_write
-                0x1a000958       0x38 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
-                0x1a000958                __sys_write
+                0x1a00094c       0x38 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a00094c                __sys_write
  .text.Board_UART_Init
-                0x1a000990       0x24 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
-                0x1a000990                Board_UART_Init
+                0x1a000984       0x24 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a000984                Board_UART_Init
  .text.Board_Debug_Init
-                0x1a0009b4       0x30 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
-                0x1a0009b4                Board_Debug_Init
+                0x1a0009a8       0x30 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a0009a8                Board_Debug_Init
  .text.Board_UARTPutChar
-                0x1a0009e4       0x34 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
-                0x1a0009e4                Board_UARTPutChar
+                0x1a0009d8       0x34 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a0009d8                Board_UARTPutChar
  .text.Board_LED_Init
-                0x1a000a18       0x5c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a000a0c       0x5c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
  .text.Board_Buttons_Init
-                0x1a000a74       0x44 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
-                0x1a000a74                Board_Buttons_Init
+                0x1a000a68       0x44 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a000a68                Board_Buttons_Init
  .text.Board_Init
-                0x1a000ab8       0x28 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
-                0x1a000ab8                Board_Init
+                0x1a000aac       0x28 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a000aac                Board_Init
  .text.Chip_SCU_PinMuxSet
-                0x1a000ae0       0x34 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
+                0x1a000ad4       0x34 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
  .text.Chip_SCU_SetPinMuxing
-                0x1a000b14       0x4c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
+                0x1a000b08       0x4c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
  .text.Chip_CREG_SetFlashAcceleration
-                0x1a000b60       0x54 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
+                0x1a000b54       0x54 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
  .text.Board_SetupMuxing
-                0x1a000bb4       0x14 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
-                0x1a000bb4                Board_SetupMuxing
+                0x1a000ba8       0x14 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
+                0x1a000ba8                Board_SetupMuxing
  .text.Board_SetupClocking
-                0x1a000bc8       0x84 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
-                0x1a000bc8                Board_SetupClocking
+                0x1a000bbc       0x84 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
+                0x1a000bbc                Board_SetupClocking
  .text.Board_SystemInit
-                0x1a000c4c       0x10 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
-                0x1a000c4c                Board_SystemInit
+                0x1a000c40       0x10 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
+                0x1a000c40                Board_SystemInit
  .text.SystemCoreClockUpdate
-                0x1a000c5c       0x18 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(chip_18xx_43xx.o)
-                0x1a000c5c                SystemCoreClockUpdate
- .text.ABS      0x1a000c74       0x24 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a000c50       0x18 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(chip_18xx_43xx.o)
+                0x1a000c50                SystemCoreClockUpdate
+ .text.ABS      0x1a000c68       0x24 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
  .text.pll_calc_divs
-                0x1a000c98      0x124 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a000c8c      0x124 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
  .text.pll_get_frac
-                0x1a000dbc      0x178 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a000db0      0x178 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
  .text.Chip_Clock_GetDivRate
-                0x1a000f34       0x40 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a000f28       0x40 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
  .text.Chip_Clock_FindBaseClock
-                0x1a000f74       0x90 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a000f68       0x90 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
  .text.Chip_Clock_EnableCrystal
-                0x1a001004       0x70 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
-                0x1a001004                Chip_Clock_EnableCrystal
+                0x1a000ff8       0x70 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a000ff8                Chip_Clock_EnableCrystal
  .text.Chip_Clock_CalcMainPLLValue
-                0x1a001074       0xd8 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
-                0x1a001074                Chip_Clock_CalcMainPLLValue
+                0x1a001068       0xd8 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a001068                Chip_Clock_CalcMainPLLValue
  .text.Chip_Clock_GetMainPLLHz
-                0x1a00114c       0xc0 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
-                0x1a00114c                Chip_Clock_GetMainPLLHz
+                0x1a001140       0xc0 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a001140                Chip_Clock_GetMainPLLHz
  .text.Chip_Clock_GetDividerSource
-                0x1a00120c       0x40 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
-                0x1a00120c                Chip_Clock_GetDividerSource
+                0x1a001200       0x40 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a001200                Chip_Clock_GetDividerSource
  .text.Chip_Clock_GetDividerDivisor
-                0x1a00124c       0x38 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
-                0x1a00124c                Chip_Clock_GetDividerDivisor
+                0x1a001240       0x38 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a001240                Chip_Clock_GetDividerDivisor
  .text.Chip_Clock_GetClockInputHz
-                0x1a001284      0x140 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
-                0x1a001284                Chip_Clock_GetClockInputHz
+                0x1a001278      0x140 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a001278                Chip_Clock_GetClockInputHz
  .text.Chip_Clock_GetBaseClocktHz
-                0x1a0013c4       0x24 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
-                0x1a0013c4                Chip_Clock_GetBaseClocktHz
+                0x1a0013b8       0x24 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a0013b8                Chip_Clock_GetBaseClocktHz
  .text.Chip_Clock_SetBaseClock
-                0x1a0013e8       0x9c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
-                0x1a0013e8                Chip_Clock_SetBaseClock
+                0x1a0013dc       0x9c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a0013dc                Chip_Clock_SetBaseClock
  .text.Chip_Clock_GetBaseClock
-                0x1a001484       0x4c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
-                0x1a001484                Chip_Clock_GetBaseClock
+                0x1a001478       0x4c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a001478                Chip_Clock_GetBaseClock
  .text.Chip_Clock_EnableOpts
-                0x1a0014d0       0x7c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
-                0x1a0014d0                Chip_Clock_EnableOpts
+                0x1a0014c4       0x7c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a0014c4                Chip_Clock_EnableOpts
+ .text.Chip_Clock_RTCEnable
+                0x1a001540       0x2c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a001540                Chip_Clock_RTCEnable
  .text.Chip_Clock_GetRate
-                0x1a00154c       0x88 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
-                0x1a00154c                Chip_Clock_GetRate
- .text.fpuInit  0x1a0015d4       0x74 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(fpu_init.o)
-                0x1a0015d4                fpuInit
+                0x1a00156c       0x88 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+                0x1a00156c                Chip_Clock_GetRate
+ .text.fpuInit  0x1a0015f4       0x74 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(fpu_init.o)
+                0x1a0015f4                fpuInit
  .text.Chip_GPIO_Init
-                0x1a001648       0x14 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(gpio_18xx_43xx.o)
-                0x1a001648                Chip_GPIO_Init
+                0x1a001668       0x14 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(gpio_18xx_43xx.o)
+                0x1a001668                Chip_GPIO_Init
+ .text.Chip_RTC_Init
+                0x1a00167c       0x64 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
+                0x1a00167c                Chip_RTC_Init
+ .text.Chip_RTC_ResetClockTickCounter
+                0x1a0016e0       0x48 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
+                0x1a0016e0                Chip_RTC_ResetClockTickCounter
  .text.Chip_RTC_Enable
-                0x1a00165c       0x38 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
-                0x1a00165c                Chip_RTC_Enable
+                0x1a001728       0x38 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
+                0x1a001728                Chip_RTC_Enable
  .text.Chip_RTC_AlarmIntConfig
-                0x1a001694       0x4c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
-                0x1a001694                Chip_RTC_AlarmIntConfig
+                0x1a001760       0x4c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
+                0x1a001760                Chip_RTC_AlarmIntConfig
  .text.Chip_RTC_SetFullTime
-                0x1a0016e0       0x5c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
-                0x1a0016e0                Chip_RTC_SetFullTime
+                0x1a0017ac       0x5c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
+                0x1a0017ac                Chip_RTC_SetFullTime
  .text.Chip_RTC_SetFullAlarmTime
-                0x1a00173c       0x3c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
-                0x1a00173c                Chip_RTC_SetFullAlarmTime
+                0x1a001808       0x3c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
+                0x1a001808                Chip_RTC_SetFullAlarmTime
+ .text.Chip_RTC_CalibCounterCmd
+                0x1a001844       0x44 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
+                0x1a001844                Chip_RTC_CalibCounterCmd
  .text.Chip_SCT_Init
-                0x1a001778       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_18xx_43xx.o)
-                0x1a001778                Chip_SCT_Init
+                0x1a001888       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_18xx_43xx.o)
+                0x1a001888                Chip_SCT_Init
  .text.Chip_SCT_Config
-                0x1a001794       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
+                0x1a0018a4       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
  .text.Chip_SCT_SetMatchCount
-                0x1a0017b0       0x28 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
+                0x1a0018c0       0x28 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
  .text.Chip_SCT_SetControl
-                0x1a0017d8       0x24 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
+                0x1a0018e8       0x24 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
  .text.Chip_SCT_SetMatchReload
-                0x1a0017fc       0x28 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
+                0x1a00190c       0x28 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
  .text.Chip_SCTPWM_Stop
-                0x1a001824       0x24 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
+                0x1a001934       0x24 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
  .text.Chip_SCTPWM_SetOutPin
-                0x1a001848       0x9c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
-                0x1a001848                Chip_SCTPWM_SetOutPin
+                0x1a001958       0x9c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
+                0x1a001958                Chip_SCTPWM_SetOutPin
  .text.Chip_SCTPWM_SetRate
-                0x1a0018e4       0x70 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
-                0x1a0018e4                Chip_SCTPWM_SetRate
+                0x1a0019f4       0x70 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
+                0x1a0019f4                Chip_SCTPWM_SetRate
  .text.Chip_Clock_DisableMainPLL
-                0x1a001954       0x20 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
+                0x1a001a64       0x20 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
  .text.Chip_Clock_SetupMainPLL
-                0x1a001974       0x44 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
+                0x1a001a84       0x44 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
  .text.Chip_Clock_MainPLLLocked
-                0x1a0019b8       0x24 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
+                0x1a001ac8       0x24 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
  .text.Chip_SetupCoreClock
-                0x1a0019dc      0x15c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
-                0x1a0019dc                Chip_SetupCoreClock
+                0x1a001aec      0x15c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
+                0x1a001aec                Chip_SetupCoreClock
  .text.Chip_UART_TXDisable
-                0x1a001b38       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+                0x1a001c48       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
  .text.Chip_UART_SetupFIFOS
-                0x1a001b54       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+                0x1a001c64       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
  .text.Chip_UART_ConfigData
-                0x1a001b70       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+                0x1a001c80       0x1c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
  .text.Chip_UART_EnableDivisorAccess
-                0x1a001b8c       0x20 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+                0x1a001c9c       0x20 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
  .text.Chip_UART_DisableDivisorAccess
-                0x1a001bac       0x20 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+                0x1a001cbc       0x20 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
  .text.Chip_UART_SetDivisorLatches
-                0x1a001bcc       0x28 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+                0x1a001cdc       0x28 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
  .text.Chip_UART_GetIndex
-                0x1a001bf4       0x60 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+                0x1a001d04       0x60 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
  .text.Chip_UART_Init
-                0x1a001c54       0x84 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
-                0x1a001c54                Chip_UART_Init
+                0x1a001d64       0x84 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+                0x1a001d64                Chip_UART_Init
  .text.Chip_UART_SetBaudFDR
-                0x1a001cd8      0x170 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
-                0x1a001cd8                Chip_UART_SetBaudFDR
- .text.__main   0x1a001e48       0x14 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(_cr__main.o)
-                0x1a001e48                __main
- .text.memset   0x1a001e5c        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(memset.o)
-                0x1a001e5c                memset
- .text._initio  0x1a001e60       0xa4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(initio.o)
-                0x1a001e60                _initio
- .text.setvbuf  0x1a001f04       0x40 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(setvbuf.o)
-                0x1a001f04                setvbuf
- .text.strlen   0x1a001f44       0x4a c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(strlen.o)
-                0x1a001f44                strlen
+                0x1a001de8      0x170 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+                0x1a001de8                Chip_UART_SetBaudFDR
+ .text.__main   0x1a001f58       0x14 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(_cr__main.o)
+                0x1a001f58                __main
+ .text.memset   0x1a001f6c        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(memset.o)
+                0x1a001f6c                memset
+ .text._initio  0x1a001f70       0xa4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(initio.o)
+                0x1a001f70                _initio
+ .text.setvbuf  0x1a002014       0x40 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(setvbuf.o)
+                0x1a002014                setvbuf
+ .text.strlen   0x1a002054       0x4a c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(strlen.o)
+                0x1a002054                strlen
  .text._deferredlazyseek
-                0x1a001f8e       0x44 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_deferredlazyseek.o)
-                0x1a001f8e                _deferredlazyseek
- .text._fdopen  0x1a001fd2       0x6a c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_fdopen.o)
-                0x1a001fd2                _fdopen
- .text._fflush  0x1a00203c       0x58 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_fflush.o)
-                0x1a00203c                _fflush
+                0x1a00209e       0x44 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_deferredlazyseek.o)
+                0x1a00209e                _deferredlazyseek
+ .text._fdopen  0x1a0020e2       0x6a c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_fdopen.o)
+                0x1a0020e2                _fdopen
+ .text._fflush  0x1a00214c       0x58 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_fflush.o)
+                0x1a00214c                _fflush
  .text._Cwritebuf
-                0x1a002094       0x68 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_writebuf.o)
-                0x1a002094                _Cwritebuf
- .text.malloc   0x1a0020fc       0xc8 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(alloc.o)
-                0x1a0020fc                malloc
- .text.free     0x1a0021c4       0x30 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(alloc.o)
-                0x1a0021c4                free
+                0x1a0021a4       0x68 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_writebuf.o)
+                0x1a0021a4                _Cwritebuf
+ .text.malloc   0x1a00220c       0xc8 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(alloc.o)
+                0x1a00220c                malloc
+ .text.free     0x1a0022d4       0x30 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(alloc.o)
+                0x1a0022d4                free
  .text._Csys_alloc
-                0x1a0021f4       0x20 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(alloc.o)
-                0x1a0021f4                _Csys_alloc
- .text.fclose   0x1a002214       0x6c c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(fclose.o)
-                0x1a002214                fclose
- .text.fflush   0x1a002280       0x30 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(fflush.o)
-                0x1a002280                fflush
- .text.fseek    0x1a0022b0      0x110 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(fseek.o)
-                0x1a0022b0                fseek
- .text.ftell    0x1a0023c0       0x4c c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(ftell.o)
-                0x1a0023c0                ftell
- .text.remove   0x1a00240c       0x14 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(remove.o)
-                0x1a00240c                remove
- .text._sbrk    0x1a002420       0x40 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_cr_sbrk.o)
-                0x1a002420                _sbrk
+                0x1a002304       0x20 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(alloc.o)
+                0x1a002304                _Csys_alloc
+ .text.fclose   0x1a002324       0x6c c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(fclose.o)
+                0x1a002324                fclose
+ .text.fflush   0x1a002390       0x30 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(fflush.o)
+                0x1a002390                fflush
+ .text.fseek    0x1a0023c0      0x110 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(fseek.o)
+                0x1a0023c0                fseek
+ .text.ftell    0x1a0024d0       0x4c c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(ftell.o)
+                0x1a0024d0                ftell
+ .text.remove   0x1a00251c       0x14 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(remove.o)
+                0x1a00251c                remove
+ .text._sbrk    0x1a002530       0x40 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_cr_sbrk.o)
+                0x1a002530                _sbrk
  .text._do_fflush
-                0x1a002460       0x44 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_do_fflush.o)
-                0x1a002460                _do_fflush
+                0x1a002570       0x44 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_do_fflush.o)
+                0x1a002570                _do_fflush
  .text.__check_heap_overflow
-                0x1a0024a4       0x18 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_cr_check_heap.o)
-                0x1a0024a4                __check_heap_overflow
+                0x1a0025b4       0x18 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(_cr_check_heap.o)
+                0x1a0025b4                __check_heap_overflow
  .text.__aeabi_division_uldivmod
-                0x1a0024bc      0x174 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7e-m/softfp\libcr_eabihelpers.a(division_64.o)
-                0x1a0024bc                __aeabi_uldivmod
-                0x1a0024c0                __bhs_ldivmod1
+                0x1a0025cc      0x174 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7e-m/softfp\libcr_eabihelpers.a(division_64.o)
+                0x1a0025cc                __aeabi_uldivmod
+                0x1a0025d0                __bhs_ldivmod1
  .text.__aeabi_division_idiv0
-                0x1a002630        0x2 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7e-m/softfp\libcr_eabihelpers.a(division_idiv0.o)
-                0x1a002630                __aeabi_idiv0
+                0x1a002740        0x2 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7e-m/softfp\libcr_eabihelpers.a(division_idiv0.o)
+                0x1a002740                __aeabi_idiv0
  .text.__aeabi_memset_lowlevel
-                0x1a002632       0x32 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7e-m/softfp\libcr_eabihelpers.a(memcpy.o)
-                0x1a002632                __aeabi_lowlevel_memset
+                0x1a002742       0x32 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7e-m/softfp\libcr_eabihelpers.a(memcpy.o)
+                0x1a002742                __aeabi_lowlevel_memset
  .text.__sys_appexit
-                0x1a002664        0x2 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_appexit.o)
-                0x1a002664                __sys_appexit
-                0x1a002664                __exit
+                0x1a002774        0x2 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_appexit.o)
+                0x1a002774                __sys_appexit
+                0x1a002774                __exit
  .text.__sys_close
-                0x1a002666        0x6 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_close.o)
-                0x1a002666                __sys_close
+                0x1a002776        0x6 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_close.o)
+                0x1a002776                __sys_close
  .text.__sys_flen
-                0x1a00266c        0x6 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_flen.o)
-                0x1a00266c                __sys_flen
+                0x1a00277c        0x6 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_flen.o)
+                0x1a00277c                __sys_flen
  .text.__sys_istty
-                0x1a002672        0x6 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_istty.o)
-                0x1a002672                __sys_istty
+                0x1a002782        0x6 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_istty.o)
+                0x1a002782                __sys_istty
  .text.__sys_remove
-                0x1a002678        0x6 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_remove.o)
-                0x1a002678                __sys_remove
+                0x1a002788        0x6 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_remove.o)
+                0x1a002788                __sys_remove
  .text.__sys_seek
-                0x1a00267e        0x6 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_seek.o)
-                0x1a00267e                __sys_seek
+                0x1a00278e        0x6 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_seek.o)
+                0x1a00278e                __sys_seek
  .text.__sys_tmpnam
-                0x1a002684        0x6 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_tmpnam.o)
-                0x1a002684                __sys_tmpnam
+                0x1a002794        0x6 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_nohost.a(__sys_tmpnam.o)
+                0x1a002794                __sys_tmpnam
  *(.rodata .rodata.* .constdata .constdata.*)
- *fill*         0x1a00268a        0x2 ff
+ *fill*         0x1a00279a        0x2 ff
  .rodata.ExtRateIn
-                0x1a00268c        0x4 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
-                0x1a00268c                ExtRateIn
+                0x1a00279c        0x4 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a00279c                ExtRateIn
  .rodata.OscRateIn
-                0x1a002690        0x4 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
-                0x1a002690                OscRateIn
+                0x1a0027a0        0x4 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a0027a0                OscRateIn
  .rodata.gpioLEDBits
-                0x1a002694        0xc C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a0027a4        0xc C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
  .rodata.gpioButtonBits
-                0x1a0026a0        0x8 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+                0x1a0027b0        0x8 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
  .rodata.InitClkStates
-                0x1a0026a8        0xc C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
+                0x1a0027b8        0xc C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
  .rodata.pinmuxing
-                0x1a0026b4       0x2c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
+                0x1a0027c4       0x2c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
  .rodata.periph_to_base
-                0x1a0026e0       0x6c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
- .rodata        0x1a00274c        0xa C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
- *fill*         0x1a002756        0x2 ff
+                0x1a0027f0       0x6c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+ .rodata        0x1a00285c        0xa C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+ *fill*         0x1a002866        0x2 ff
  .rodata.InitClkStates
-                0x1a002758       0x48 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
+                0x1a002868       0x48 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
  .rodata.UART_PClock
-                0x1a0027a0        0x8 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+                0x1a0028b0        0x8 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
  .rodata.UART_BClock
-                0x1a0027a8        0x8 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+                0x1a0028b8        0x8 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
  .rodata.str1.1
-                0x1a0027b0        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(initio.o)
+                0x1a0028c0        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(initio.o)
  .rodata.str1.1
-                0x1a0027b4       0x18 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(alloc.o)
-                0x1a0027cc                . = ALIGN (0x4)
+                0x1a0028c4       0x18 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(alloc.o)
+                0x1a0028dc                . = ALIGN (0x4)
 
-.glue_7         0x1a0027cc        0x0
- .glue_7        0x1a0027cc        0x0 linker stubs
+.glue_7         0x1a0028dc        0x0
+ .glue_7        0x1a0028dc        0x0 linker stubs
 
-.glue_7t        0x1a0027cc        0x0
- .glue_7t       0x1a0027cc        0x0 linker stubs
+.glue_7t        0x1a0028dc        0x0
+ .glue_7t       0x1a0028dc        0x0 linker stubs
 
-.vfp11_veneer   0x1a0027cc        0x0
- .vfp11_veneer  0x1a0027cc        0x0 linker stubs
+.vfp11_veneer   0x1a0028dc        0x0
+ .vfp11_veneer  0x1a0028dc        0x0 linker stubs
 
-.v4_bx          0x1a0027cc        0x0
- .v4_bx         0x1a0027cc        0x0 linker stubs
+.v4_bx          0x1a0028dc        0x0
+ .v4_bx         0x1a0028dc        0x0 linker stubs
 
-.iplt           0x1a0027cc        0x0
- .iplt          0x1a0027cc        0x0 ./example/src/src-gen/Prefix.o
+.iplt           0x1a0028dc        0x0
+ .iplt          0x1a0028dc        0x0 ./example/src/src-gen/Prefix.o
 
-.rel.dyn        0x1a0027cc        0x0
- .rel.iplt      0x1a0027cc        0x0 ./example/src/src-gen/Prefix.o
+.rel.dyn        0x1a0028dc        0x0
+ .rel.iplt      0x1a0028dc        0x0 ./example/src/src-gen/Prefix.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x1a0027cc                __exidx_start = .
+                0x1a0028dc                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x1a0027cc                __exidx_end = .
-                0x1a0027cc                _etext = .
+                0x1a0028dc                __exidx_end = .
+                0x1a0028dc                _etext = .
 
-.data_RAM2      0x10080000        0x0 load address 0x1a0027cc
+.data_RAM2      0x10080000        0x0 load address 0x1a0028dc
  FILL mask 0xff
                 [!provide]                PROVIDE (__start_data_RAM2, .)
  *(.ramfunc.$RAM2)
@@ -3248,7 +3262,7 @@ END GROUP
                 0x10080000                . = ALIGN (0x4)
                 [!provide]                PROVIDE (__end_data_RAM2, .)
 
-.data_RAM3      0x20000000        0x0 load address 0x1a0027cc
+.data_RAM3      0x20000000        0x0 load address 0x1a0028dc
  FILL mask 0xff
                 [!provide]                PROVIDE (__start_data_RAM3, .)
  *(.ramfunc.$RAM3)
@@ -3258,7 +3272,7 @@ END GROUP
                 0x20000000                . = ALIGN (0x4)
                 [!provide]                PROVIDE (__end_data_RAM3, .)
 
-.data_RAM4      0x20008000        0x0 load address 0x1a0027cc
+.data_RAM4      0x20008000        0x0 load address 0x1a0028dc
  FILL mask 0xff
                 [!provide]                PROVIDE (__start_data_RAM4, .)
  *(.ramfunc.$RAM4)
@@ -3268,7 +3282,7 @@ END GROUP
                 0x20008000                . = ALIGN (0x4)
                 [!provide]                PROVIDE (__end_data_RAM4, .)
 
-.data_RAM5      0x2000c000        0x0 load address 0x1a0027cc
+.data_RAM5      0x2000c000        0x0 load address 0x1a0028dc
  FILL mask 0xff
                 [!provide]                PROVIDE (__start_data_RAM5, .)
  *(.ramfunc.$RAM5)
@@ -3284,7 +3298,7 @@ END GROUP
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _end_uninit_RESERVED = .
 
-.data           0x10000000        0x0 load address 0x1a0027cc
+.data           0x10000000        0x0 load address 0x1a0028dc
  FILL mask 0xff
                 0x10000000                _data = .
  *(vtable)
@@ -3293,7 +3307,7 @@ END GROUP
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _edata = .
 
-.igot.plt       0x10000000        0x0 load address 0x1a0027cc
+.igot.plt       0x10000000        0x0 load address 0x1a0028dc
  .igot.plt      0x10000000        0x0 ./example/src/src-gen/Prefix.o
 
 .bss_RAM2       0x10080000        0x0
@@ -3324,35 +3338,34 @@ END GROUP
                 0x2000c000                . = ALIGN ((. != 0x0)?0x4:0x1)
                 [!provide]                PROVIDE (__end_bss_RAM5, .)
 
-.bss            0x10000000      0x168
+.bss            0x10000000      0x164
                 0x10000000                _bss = .
  *(.bss*)
- .bss.ServoFlag
-                0x10000000        0x1 ./example/src/statechart.o
-                0x10000000                ServoFlag
- *fill*         0x10000001        0x3 
- .bss.tick_ct   0x10000004        0x4 ./example/src/statechart.o
  .bss.fAlarmTimeMatched
-                0x10000008        0x1 ./example/src/statechart.o
- *fill*         0x10000009        0x3 
+                0x10000000        0x1 ./example/src/statechart.o
+ .bss.ServoFlag
+                0x10000001        0x1 ./example/src/statechart.o
+                0x10000001                ServoFlag
+ *fill*         0x10000002        0x2 
+ .bss.tick_ct   0x10000004        0x4 ./example/src/statechart.o
  .bss.audio_usb_pll_freq
-                0x1000000c        0x8 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
- .bss._extra    0x10000014        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(initio.o)
-                0x10000014                _extra
- .bss.__Ciob    0x10000018      0x140 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(stdio.o)
-                0x10000018                __Ciob
- .bss.errno     0x10000158        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(errno.o)
-                0x10000158                errno
- .bss.__heaps   0x1000015c        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(__init_alloc.o)
-                0x1000015c                __heaps
+                0x10000008        0x8 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+ .bss._extra    0x10000010        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(initio.o)
+                0x10000010                _extra
+ .bss.__Ciob    0x10000014      0x140 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(stdio.o)
+                0x10000014                __Ciob
+ .bss.errno     0x10000154        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(errno.o)
+                0x10000154                errno
+ .bss.__heaps   0x10000158        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(__init_alloc.o)
+                0x10000158                __heaps
  .bss.__end_of_heap
-                0x10000160        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(__init_alloc.o)
-                0x10000160                __end_of_heap
+                0x1000015c        0x4 c:/nxp/lpcxpresso_8.2.2_650/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libcr_c.a(__init_alloc.o)
+                0x1000015c                __end_of_heap
  *(COMMON)
- COMMON         0x10000164        0x4 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(chip_18xx_43xx.o)
-                0x10000164                SystemCoreClock
-                0x10000168                . = ALIGN (0x4)
-                0x10000168                _ebss = .
+ COMMON         0x10000160        0x4 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(chip_18xx_43xx.o)
+                0x10000160                SystemCoreClock
+                0x10000164                . = ALIGN (0x4)
+                0x10000164                _ebss = .
                 [!provide]                PROVIDE (end, .)
 
 .noinit_RAM2    0x10080000        0x0
@@ -3375,31 +3388,31 @@ END GROUP
  *(.noinit.$RamAHB_ETB16*)
                 0x2000c000                . = ALIGN (0x4)
 
-.noinit         0x10000168        0x0
-                0x10000168                _noinit = .
+.noinit         0x10000164        0x0
+                0x10000164                _noinit = .
  *(.noinit*)
-                0x10000168                . = ALIGN (0x4)
-                0x10000168                _end_noinit = .
-                0x10000168                PROVIDE (_pvHeapStart, DEFINED (__user_heap_base)?__user_heap_base:.)
+                0x10000164                . = ALIGN (0x4)
+                0x10000164                _end_noinit = .
+                0x10000164                PROVIDE (_pvHeapStart, DEFINED (__user_heap_base)?__user_heap_base:.)
                 0x10008000                PROVIDE (_vStackTop, DEFINED (__user_stack_top)?__user_stack_top:(__top_RamLoc32 - 0x0))
                 [!provide]                PROVIDE (__valid_user_code_checksum, (0x0 - ((((((_vStackTop + (ResetISR + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
 OUTPUT(periph_statechart.axf elf32-littlearm)
 
-.debug_info     0x00000000     0x9901
+.debug_info     0x00000000     0x9915
  .debug_info    0x00000000      0x297 ./example/src/cr_startup_lpc43xx.o
- .debug_info    0x00000297     0x170e ./example/src/statechart.o
- .debug_info    0x000019a5       0xea ./example/src/sysinit.o
- .debug_info    0x00001a8f     0x1a09 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
- .debug_info    0x00003498      0xb56 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
- .debug_info    0x00003fee      0xa31 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(chip_18xx_43xx.o)
- .debug_info    0x00004a1f     0x1590 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
- .debug_info    0x00005faf      0x128 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(fpu_init.o)
- .debug_info    0x000060d7      0x435 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(gpio_18xx_43xx.o)
- .debug_info    0x0000650c      0x6c3 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
- .debug_info    0x00006bcf      0x95d C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_18xx_43xx.o)
- .debug_info    0x0000752c      0xa2b C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
- .debug_info    0x00007f57      0x8fd C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
- .debug_info    0x00008854     0x10ad C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+ .debug_info    0x00000297     0x1722 ./example/src/statechart.o
+ .debug_info    0x000019b9       0xea ./example/src/sysinit.o
+ .debug_info    0x00001aa3     0x1a09 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+ .debug_info    0x000034ac      0xb56 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
+ .debug_info    0x00004002      0xa31 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(chip_18xx_43xx.o)
+ .debug_info    0x00004a33     0x1590 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+ .debug_info    0x00005fc3      0x128 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(fpu_init.o)
+ .debug_info    0x000060eb      0x435 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(gpio_18xx_43xx.o)
+ .debug_info    0x00006520      0x6c3 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
+ .debug_info    0x00006be3      0x95d C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_18xx_43xx.o)
+ .debug_info    0x00007540      0xa2b C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
+ .debug_info    0x00007f6b      0x8fd C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
+ .debug_info    0x00008868     0x10ad C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
 
 .debug_abbrev   0x00000000     0x18ad
  .debug_abbrev  0x00000000       0xed ./example/src/cr_startup_lpc43xx.o
@@ -3463,69 +3476,69 @@ OUTPUT(periph_statechart.axf elf32-littlearm)
  .debug_ranges  0x00000570       0x40 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
  .debug_ranges  0x000005b0      0x120 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
 
-.debug_macro    0x00000000     0x3020
+.debug_macro    0x00000000     0x3011
  .debug_macro   0x00000000       0x1d ./example/src/cr_startup_lpc43xx.o
- .debug_macro   0x0000001d      0x32e ./example/src/statechart.o
- .debug_macro   0x0000034b      0x310 ./example/src/sysinit.o
- .debug_macro   0x0000065b      0x336 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
- .debug_macro   0x00000991      0x89e C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
- .debug_macro   0x0000122f       0x12 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
- .debug_macro   0x00001241      0x339 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
- .debug_macro   0x0000157a      0x310 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
- .debug_macro   0x0000188a      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(chip_18xx_43xx.o)
- .debug_macro   0x00001b64      0x2e0 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
- .debug_macro   0x00001e44       0xc0 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(fpu_init.o)
- .debug_macro   0x00001f04      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(gpio_18xx_43xx.o)
- .debug_macro   0x000021de      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
- .debug_macro   0x000024b8      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_18xx_43xx.o)
- .debug_macro   0x00002792      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
- .debug_macro   0x00002a6c      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
- .debug_macro   0x00002d46      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+ .debug_macro   0x0000001d      0x31f ./example/src/statechart.o
+ .debug_macro   0x0000033c      0x310 ./example/src/sysinit.o
+ .debug_macro   0x0000064c      0x336 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+ .debug_macro   0x00000982      0x89e C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+ .debug_macro   0x00001220       0x12 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+ .debug_macro   0x00001232      0x339 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+ .debug_macro   0x0000156b      0x310 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
+ .debug_macro   0x0000187b      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(chip_18xx_43xx.o)
+ .debug_macro   0x00001b55      0x2e0 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+ .debug_macro   0x00001e35       0xc0 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(fpu_init.o)
+ .debug_macro   0x00001ef5      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(gpio_18xx_43xx.o)
+ .debug_macro   0x000021cf      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
+ .debug_macro   0x000024a9      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_18xx_43xx.o)
+ .debug_macro   0x00002783      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
+ .debug_macro   0x00002a5d      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
+ .debug_macro   0x00002d37      0x2da C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
 
-.debug_line     0x00000000     0x5c92
+.debug_line     0x00000000     0x5ca0
  .debug_line    0x00000000      0x102 ./example/src/cr_startup_lpc43xx.o
- .debug_line    0x00000102      0x85c ./example/src/statechart.o
- .debug_line    0x0000095e      0x634 ./example/src/sysinit.o
- .debug_line    0x00000f92      0xa30 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
- .debug_line    0x000019c2      0x6bb C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
- .debug_line    0x0000207d      0x634 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(chip_18xx_43xx.o)
- .debug_line    0x000026b1      0xa31 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
- .debug_line    0x000030e2      0x1e0 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(fpu_init.o)
- .debug_line    0x000032c2      0x685 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(gpio_18xx_43xx.o)
- .debug_line    0x00003947      0x742 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
- .debug_line    0x00004089      0x605 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_18xx_43xx.o)
- .debug_line    0x0000468e      0x651 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
- .debug_line    0x00004cdf      0x6a2 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
- .debug_line    0x00005381      0x911 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+ .debug_line    0x00000102      0x86a ./example/src/statechart.o
+ .debug_line    0x0000096c      0x634 ./example/src/sysinit.o
+ .debug_line    0x00000fa0      0xa30 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+ .debug_line    0x000019d0      0x6bb C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
+ .debug_line    0x0000208b      0x634 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(chip_18xx_43xx.o)
+ .debug_line    0x000026bf      0xa31 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+ .debug_line    0x000030f0      0x1e0 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(fpu_init.o)
+ .debug_line    0x000032d0      0x685 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(gpio_18xx_43xx.o)
+ .debug_line    0x00003955      0x742 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
+ .debug_line    0x00004097      0x605 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_18xx_43xx.o)
+ .debug_line    0x0000469c      0x651 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
+ .debug_line    0x00004ced      0x6a2 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
+ .debug_line    0x0000538f      0x911 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
 
-.debug_str      0x00000000    0x19592
+.debug_str      0x00000000    0x195af
  .debug_str     0x00000000     0x2734 ./example/src/cr_startup_lpc43xx.o
                                0x274c (size before relaxing)
- .debug_str     0x00002734    0x14434 ./example/src/statechart.o
-                              0x16af3 (size before relaxing)
- .debug_str     0x00016b68       0x23 ./example/src/sysinit.o
+ .debug_str     0x00002734    0x14451 ./example/src/statechart.o
+                              0x16b10 (size before relaxing)
+ .debug_str     0x00016b85       0x23 ./example/src/sysinit.o
                               0x1576c (size before relaxing)
- .debug_str     0x00016b8b     0x19b0 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
+ .debug_str     0x00016ba8     0x19b0 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board.o)
                               0x17c08 (size before relaxing)
- .debug_str     0x0001853b      0x125 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
+ .debug_str     0x00018558      0x125 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug\liblpc_board_nxp_lpcxpresso_4337.a(board_sysinit.o)
                               0x1650a (size before relaxing)
- .debug_str     0x00018660       0xd1 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(chip_18xx_43xx.o)
+ .debug_str     0x0001867d       0xd1 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(chip_18xx_43xx.o)
                               0x15dac (size before relaxing)
- .debug_str     0x00018731      0x5e7 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
+ .debug_str     0x0001874e      0x5e7 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(clock_18xx_43xx.o)
                               0x1632f (size before relaxing)
- .debug_str     0x00018d18       0xb5 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(fpu_init.o)
+ .debug_str     0x00018d35       0xb5 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(fpu_init.o)
                                0x9945 (size before relaxing)
- .debug_str     0x00018dcd       0xe4 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(gpio_18xx_43xx.o)
+ .debug_str     0x00018dea       0xe4 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(gpio_18xx_43xx.o)
                               0x151ae (size before relaxing)
- .debug_str     0x00018eb1      0x219 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
+ .debug_str     0x00018ece      0x219 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(rtc_18xx_43xx.o)
                               0x15443 (size before relaxing)
- .debug_str     0x000190ca       0x72 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_18xx_43xx.o)
+ .debug_str     0x000190e7       0x72 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_18xx_43xx.o)
                               0x156b1 (size before relaxing)
- .debug_str     0x0001913c       0x6c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
+ .debug_str     0x00019159       0x6c C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sct_pwm_18xx_43xx.o)
                               0x1573d (size before relaxing)
- .debug_str     0x000191a8       0xb4 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
+ .debug_str     0x000191c5       0xb4 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(sysinit_18xx_43xx.o)
                               0x15d7b (size before relaxing)
- .debug_str     0x0001925c      0x336 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
+ .debug_str     0x00019279      0x336 C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug\liblpc_chip_43xx.a(uart_18xx_43xx.o)
                               0x15edf (size before relaxing)
 
 .comment        0x00000000       0xdc
