@@ -35,7 +35,7 @@ typedef struct{
  ****************************************************************************/
 
 void VectorFoodInit(food_t * VectorFood, RTC_TIME_T FullTime);
-void set_new_alarm(RTC_TIME_T * AlarmVector, uint8_t pos);
+void set_new_alarm(food_t * AlarmVector, uint8_t pos);
 void swap(RTC_TIME_T * AlarmVector, uint8_t pos1,uint8_t pos2);
 void VAlarm_ordenar(RTC_TIME_T * AlarmVector);
 int RTC(void); /* ejemplo de uso de rtc*/

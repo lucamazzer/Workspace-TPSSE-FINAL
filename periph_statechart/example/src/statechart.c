@@ -100,7 +100,6 @@ int main(void)
 	/* Generic Initialization */
 	fAlarmTimeMatched = 0;
 	RTC_TIME_T FullTime;
-	//food_t VectorAlarm[3];
 	food_t VectorFood[3];
 	int i;
 	SystemCoreClockUpdate();
@@ -117,8 +116,8 @@ int main(void)
 	Chip_SCTPWM_SetOutPin(LPC_SCT, 1, 2);
 
 	/* Start with 0% duty cycle */
-	Chip_SCTPWM_SetDutyCycle(LPC_SCT, 1, Chip_SCTPWM_GetTicksPerCycle(LPC_SCT)*DUTY_CYCLE_full );
-	Chip_SCTPWM_Start(LPC_SCT);
+	//Chip_SCTPWM_SetDutyCycle(LPC_SCT, 1, Chip_SCTPWM_GetTicksPerCycle(LPC_SCT)*DUTY_CYCLE_full );
+	//Chip_SCTPWM_Start(LPC_SCT);
 
 	//Chip_SCT_EnableEventInt(LPC_SCT, SCT_EVT_1);
 
@@ -143,13 +142,12 @@ int main(void)
 	Chip_RTC_SetFullTime(LPC_RTC, &FullTime);
 	VectorFoodInit(VectorFood, FullTime);
 	/* Set ALARM time for 14:00:20 am */
-	//VectorAlarm[1].time[RTC_TIMETYPE_SECOND]  = 5;
-	//VectoAlarm[2].time[RTC_TIMETYPE_SECOND]  = 10;
-	//VectoAlarm[3].time[RTC_TIMETYPE_SECOND]  = 5;
 	//FullTime.time[RTC_TIMETYPE_SECOND]  = 5;
 	/*FullTime.time[RTC_TIMETYPE_HOUR]    = 9;*/
-	 VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 5;
-	 Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[1].clock));
+	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 5;
+	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 15;
+	VectorFood[3].clock.time[RTC_TIMETYPE_SECOND]  = 25;
+	Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[1].clock));
 	//Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
 
 
@@ -171,7 +169,9 @@ int main(void)
 		__WFI();
 		//toggle_servo ();
 		if(fAlarmTimeMatched){
+
 			fAlarmTimeMatched = false;
+			Chip_SCTPWM_Start(LPC_SCT);
 			for(i=0;i<7;i++){
 				toggle_servo ();
 				tick_ct=0;
@@ -180,6 +180,7 @@ int main(void)
 				}
 			}
 			Chip_SCTPWM_Stop(LPC_SCT); // con esto puedo apagar el pwm
+			set_new_alarm(VectorFood, 2);
 		}
 	}
 }
