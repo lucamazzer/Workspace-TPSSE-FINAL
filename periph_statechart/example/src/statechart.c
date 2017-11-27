@@ -106,7 +106,7 @@ int main(void)
 	/* Generic Initialization */
 	fAlarmTimeMatched = 0;
 	RTC_TIME_T FullTime;
-	RTC_TIME_T VectoAlarm[3];
+	RTC_TIME_T VectorAlarm[3];
 	int i;
 	SystemCoreClockUpdate();
 	Board_Init();
@@ -148,12 +148,12 @@ int main(void)
 	Chip_RTC_SetFullTime(LPC_RTC, &FullTime);
 
 	  /* Set ALARM time for 14:00:20 am */
-	VectoAlarm[1].time[RTC_TIMETYPE_SECOND]  = 5;
+	//VectorAlarm[1].time[RTC_TIMETYPE_SECOND]  = 5;
 	//VectoAlarm[2].time[RTC_TIMETYPE_SECOND]  = 10;
 	//VectoAlarm[3].time[RTC_TIMETYPE_SECOND]  = 5;
 		FullTime.time[RTC_TIMETYPE_SECOND]  = 5;
 		/*FullTime.time[RTC_TIMETYPE_HOUR]    = 9;*/
-	//Chip_RTC_SetFullAlarmTime(LPC_RTC, &VectoAlarm[1]);
+	//Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorAlarm[1]));
 	Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
 
 
@@ -183,7 +183,7 @@ int main(void)
 				__WFI();
 				}
 			}
-		Chip_SCTPWM_Stop(LPC_SCT); // con estopuedo apagar el pwm
+		Chip_SCTPWM_Stop(LPC_SCT); // con esto puedo apagar el pwm
 		}
 	}
 }
