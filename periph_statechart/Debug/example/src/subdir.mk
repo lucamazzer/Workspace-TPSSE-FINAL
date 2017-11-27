@@ -6,21 +6,18 @@
 C_SRCS += \
 ../example/src/TimerTicks.c \
 ../example/src/cr_startup_lpc43xx.c \
-../example/src/funciones.c \
 ../example/src/statechart.c \
 ../example/src/sysinit.c 
 
 OBJS += \
 ./example/src/TimerTicks.o \
 ./example/src/cr_startup_lpc43xx.o \
-./example/src/funciones.o \
 ./example/src/statechart.o \
 ./example/src/sysinit.o 
 
 C_DEPS += \
 ./example/src/TimerTicks.d \
 ./example/src/cr_startup_lpc43xx.d \
-./example/src/funciones.d \
 ./example/src/statechart.d \
 ./example/src/sysinit.d 
 
