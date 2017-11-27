@@ -109,18 +109,21 @@ void VectorFoodInit(food_t * VectorFood, RTC_TIME_T FullTime)
 
 void set_new_alarm(food_t * AlarmVector, uint8_t pos){
 	//RTC_TIME_T Alarm;
+	RTC_TIME_T FullTime;
+
+	Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
 
 	if(pos<MAX_POS){
-	/*	Alarm.time[RTC_TIMETYPE_SECOND]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_SECOND];
-		Alarm.time[RTC_TIMETYPE_MINUTE]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_MINUTE];
-		Alarm.time[RTC_TIMETYPE_HOUR]    = (AlarmVector[pos].clock).time[RTC_TIMETYPE_HOUR];
-		Alarm.time[RTC_TIMETYPE_DAYOFMONTH]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_DAYOFMONTH];
+	    FullTime.time[RTC_TIMETYPE_SECOND]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_SECOND];
+		FullTime.time[RTC_TIMETYPE_MINUTE]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_MINUTE];
+		FullTime.time[RTC_TIMETYPE_HOUR]    = (AlarmVector[pos].clock).time[RTC_TIMETYPE_HOUR];
+		/*Alarm.time[RTC_TIMETYPE_DAYOFMONTH]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_DAYOFMONTH];
 		Alarm.time[RTC_TIMETYPE_DAYOFWEEK]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_DAYOFWEEK];
 		Alarm.time[RTC_TIMETYPE_DAYOFYEAR]    = (AlarmVector[pos].clock).time[RTC_TIMETYPE_DAYOFYEAR];
 		Alarm.time[RTC_TIMETYPE_MONTH]    = (AlarmVector[pos].clock).time[RTC_TIMETYPE_MONTH];
 		Alarm.time[RTC_TIMETYPE_YEAR]    = (AlarmVector[pos].clock).time[RTC_TIMETYPE_YEAR];*/
 
-		Chip_RTC_SetFullAlarmTime(LPC_RTC, &(AlarmVector[pos].clock));
+		Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
 	}
 }
 void swap(RTC_TIME_T * AlarmVector, uint8_t pos1,uint8_t pos2){
