@@ -43,8 +43,8 @@
 /* Systick timer tick rate, to change duty cycle */
 #define TICKRATE_HZ     100        /* 1 ms Tick rate */
 
-#define DUTY_CYCLE 90/100	//Duty Cycle configurado
-#define DUTY_CYCLE_full 98/100	//Duty Cycle configurado
+#define DUTY_CYCLE 90/100	//Duty Cycle configurado 180 grados
+#define DUTY_CYCLE_full 98/100	//Duty Cycle configurado 0 grados
 /*****************************************************************************
  * Public types/enumerations/variables
  ****************************************************************************/
