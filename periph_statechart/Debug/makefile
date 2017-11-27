@@ -30,7 +30,7 @@ all: periph_statechart.axf
 periph_statechart.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"C:\Users\luca10\Desktop\EMbebidos\Workspace-tpfinal\lpc_chip_43xx\Debug" -L"C:\Users\luca10\Desktop\EMbebidos\Workspace-tpfinal\lpc_board_nxp_lpcxpresso_4337\Debug" -Xlinker -Map="periph_statechart.map" -Xlinker --gc-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -mthumb -T "periph_statechart_Debug.ld" -o "periph_statechart.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_chip_43xx\Debug" -L"C:\Users\luca10\Desktop\EMbebidos\Workspace-TPSSE-FINAL\lpc_board_nxp_lpcxpresso_4337\Debug" -Xlinker -Map="periph_statechart.map" -Xlinker --gc-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -mthumb -T "periph_statechart_Debug.ld" -o "periph_statechart.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build

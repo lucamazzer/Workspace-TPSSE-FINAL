@@ -106,6 +106,7 @@ int main(void)
 	/* Generic Initialization */
 	fAlarmTimeMatched = 0;
 	RTC_TIME_T FullTime;
+	RTC_TIME_T VectoAlarm[3];
 	int i;
 	SystemCoreClockUpdate();
 	Board_Init();
@@ -147,10 +148,13 @@ int main(void)
 	Chip_RTC_SetFullTime(LPC_RTC, &FullTime);
 
 	  /* Set ALARM time for 14:00:20 am */
+	VectoAlarm[1].time[RTC_TIMETYPE_SECOND]  = 5;
+	//VectoAlarm[2].time[RTC_TIMETYPE_SECOND]  = 10;
+	//VectoAlarm[3].time[RTC_TIMETYPE_SECOND]  = 5;
 		FullTime.time[RTC_TIMETYPE_SECOND]  = 5;
-		/*FullTime.time[RTC_TIMETYPE_MINUTE]  = 30;*/
 		/*FullTime.time[RTC_TIMETYPE_HOUR]    = 9;*/
-		Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
+	//Chip_RTC_SetFullAlarmTime(LPC_RTC, &VectoAlarm[1]);
+	Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
 
 
 		/* Enable matching for alarm for second, minute, hour fields only */
@@ -168,7 +172,7 @@ int main(void)
 
 
 	while (1) {
-		__WFI();
+	  	__WFI();
 		//toggle_servo ();
 		if(fAlarmTimeMatched){
 			fAlarmTimeMatched = false;
@@ -179,6 +183,7 @@ int main(void)
 				__WFI();
 				}
 			}
+		Chip_SCTPWM_Stop(LPC_SCT); // con estopuedo apagar el pwm
 		}
 	}
 }
