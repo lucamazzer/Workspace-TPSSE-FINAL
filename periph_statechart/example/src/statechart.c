@@ -38,7 +38,7 @@
 
 #define BOARD_NXP_LPCXPRESSO_4337
 
-#define SCT_PWM_RATE   50        /* PWM frequency 10 KHz */
+#define SCT_PWM_RATE   50        /* PWM frequency 50 Hz */
 
 /* Systick timer tick rate, to change duty cycle */
 #define TICKRATE_HZ     100        /* 1 ms Tick rate */
