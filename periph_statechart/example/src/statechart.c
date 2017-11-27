@@ -279,7 +279,7 @@ void Set_next_Alarm(food_t * FoodVector){
 }
 
 void ServirComida (food_t * Comida, uint8_t * position){
-	int i;
+	uint8_t i;
 	Chip_SCTPWM_Start(LPC_SCT);
 	for(i=0;i<3;i++){
 		toggle_servo ();
@@ -338,6 +338,7 @@ int main(void)
 	uint8_t pos=0;
 	SystemCoreClockUpdate();
 	Board_Init();
+	uint8_t i;
 
 	/* Initialize the SCT as PWM and set frequency */
 	Chip_SCTPWM_Init(LPC_SCT);
@@ -379,9 +380,9 @@ int main(void)
 
 	/* Set ALARM time */
 
-	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 15; // prueba d ealarma
+	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 15; // prueba d ealarma
 	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 30;
-	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 25;
+	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 25;
 
 	Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[0].clock));
 
@@ -399,11 +400,40 @@ int main(void)
 
 
 
+
 	while (1) {
 		__WFI();
-		if(fAlarmTimeMatched){
+		/*	if(fAlarmTimeMatched){
 			fAlarmTimeMatched = false;
 			ServirComida(VectorFood,&pos);
+		}*/
+		if(!pos){
+			pos++;
+			if(Check_Time(VectorFood[1].clock,VectorFood[2].clock)== menor) // si 1 es menor a 2
+			{
+				Chip_SCTPWM_Start(LPC_SCT);
+				for(i=0;i<3;i++){
+					toggle_servo ();
+					tick_ct=0;
+					while(tick_ct<150){
+						__WFI();
+					}
+				}
+				Chip_SCTPWM_Stop(LPC_SCT);
+			}
+			else   									// si 1 es mayor a 2
+			{
+				Chip_SCTPWM_Start(LPC_SCT);
+				for(i=0;i<6;i++){
+					toggle_servo ();
+					tick_ct=0;
+					while(tick_ct<150){
+						__WFI();
+					}
+				}
+				Chip_SCTPWM_Stop(LPC_SCT);
+			}
 		}
 	}
+
 }
