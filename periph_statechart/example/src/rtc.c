@@ -38,7 +38,13 @@
 static volatile bool fIntervalReached;
 static volatile bool fAlarmTimeMatched;
 static volatile bool On0, On1;
+typedef struct{
 
+	RTC_TIME_T clock;
+	uint32_t food;
+	bool init;
+
+};
 /*****************************************************************************
  * Public types/enumerations/variables
  ****************************************************************************/
@@ -67,6 +73,24 @@ static void showTime(RTC_TIME_T *pTime)
  * @return	Nothing
  */
 
+void VectorFoodInit(RTC_TIME_T * VectorFood, RTC_TIME_T FullTime)
+{
+
+	for(i=0;i< MAX_POS; i++)
+	{
+		VectorFood[i].clock.time[RTC_TIMETYPE_SECOND]=FullTime.time[RTC_TIMETYPE_SECOND];
+		VectorFood[i].clock.time[RTC_TIMETYPE_MINUTE]=FullTime.time[RTC_TIMETYPE_MINUTE];
+		VectorFood[i].clock.time[RTC_TIMETYPE_HOUR]=FullTime.time[RTC_TIMETYPE_HOUR];
+		VectorFood[i].clock.time[RTC_TIMETYPE_DAYOFMONTH]=FullTime.time[RTC_TIMETYPE_DAYOFMONTH];
+		VectorFood[i].clock.time[RTC_TIMETYPE_DAYOFWEEK]=FullTime.time[RTC_TIMETYPE_DAYOFWEEK];
+		VectorFood[i].clock.time[RTC_TIMETYPE_DAYOFYEAR]=FullTime.time[RTC_TIMETYPE_DAYOFYEAR];
+		VectorFood[i].clock.time[RTC_TIMETYPE_MONTH]=FullTime.time[RTC_TIMETYPE_MONTH];
+		VectorFood[i].clock.time[RTC_TIMETYPE_YEAR]=FullTime.time[RTC_TIMETYPE_YEAR];
+		VectorFood[i].food=0;
+		VectorFood[i].init=FALSE;
+	}
+
+}
 
 void set_new_alarm(RTC_TIME_T * AlarmVector, uint8_t pos){
 	RTC_TIME_T Alarm;
