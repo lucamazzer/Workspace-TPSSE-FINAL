@@ -98,6 +98,19 @@ void toggle_flag(void){
  * * * * * * * * * * * * * * *  * * * * * * * * * */
 
 /*inicializa el vector de comida y horario no inicializa la comida x ahora*/
+
+static void showTime(RTC_TIME_T *pTime)
+{
+	DEBUGOUT("Time: %.2d:%.2d:%.2d %.2d/%.2d/%.4d\r\n", pTime->time[RTC_TIMETYPE_HOUR],
+			 pTime->time[RTC_TIMETYPE_MINUTE],
+			 pTime->time[RTC_TIMETYPE_SECOND],
+			 pTime->time[RTC_TIMETYPE_MONTH],
+			 pTime->time[RTC_TIMETYPE_DAYOFMONTH],
+			 pTime->time[RTC_TIMETYPE_YEAR]);
+}
+
+
+
 void VectorFoodInit(food_t * VectorFood, RTC_TIME_T FullTime)
 { int i;
 
@@ -361,15 +374,6 @@ void RTC_IRQHandler(void)
 	}
 }
 
-static void showTime(RTC_TIME_T *pTime)
-{
-	DEBUGOUT("Time: %.2d:%.2d:%.2d %.2d/%.2d/%.4d\r\n", pTime->time[RTC_TIMETYPE_HOUR],
-			 pTime->time[RTC_TIMETYPE_MINUTE],
-			 pTime->time[RTC_TIMETYPE_SECOND],
-			 pTime->time[RTC_TIMETYPE_MONTH],
-			 pTime->time[RTC_TIMETYPE_DAYOFMONTH],
-			 pTime->time[RTC_TIMETYPE_YEAR]);
-}
 
 
 int main(void)
@@ -381,9 +385,6 @@ int main(void)
 	food_t VectorFood_PRUEBA[MAX_POS];
 	uint8_t pos=0;
 	status_time aux;
-	bool flag;
-	flag=TRUE;
-
 
 	SystemCoreClockUpdate();
 	Board_Init();
@@ -412,13 +413,13 @@ int main(void)
 
 	Chip_RTC_Init(LPC_RTC);
 
-	/* Set current time for RTC 2:00:00PM, 2017-11-22 */
+	/* Set current time for RTC 26:00:00PM, 2017-11-29 */
 	FullTime.time[RTC_TIMETYPE_SECOND]  = 0;
 	FullTime.time[RTC_TIMETYPE_MINUTE]  = 0;
-	FullTime.time[RTC_TIMETYPE_HOUR]    = 14;
-	FullTime.time[RTC_TIMETYPE_DAYOFMONTH]  = 22;
+	FullTime.time[RTC_TIMETYPE_HOUR]    = 16;
+	FullTime.time[RTC_TIMETYPE_DAYOFMONTH]  = 28;
 	FullTime.time[RTC_TIMETYPE_DAYOFWEEK]   = 3;
-	FullTime.time[RTC_TIMETYPE_DAYOFYEAR]   = 326;
+	FullTime.time[RTC_TIMETYPE_DAYOFYEAR]   = 332;
 	FullTime.time[RTC_TIMETYPE_MONTH]   = 11;
 	FullTime.time[RTC_TIMETYPE_YEAR]    = 2017;
 
@@ -428,7 +429,7 @@ int main(void)
 	VectorFoodInit(VectorFood, FullTime);
 
 	/* Set ALARM time */
-
+	/*HARCODEO ALARMAS PARA PROBAR EN RAM*/
 	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 15; // prueba d ealarma
 	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 30;
 	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  =45;
@@ -437,8 +438,11 @@ int main(void)
 	VectorFood[2].food=2;
 	VectorFood[0].food=3;
 
-	FullTime.time[RTC_TIMETYPE_SECOND]  = 15;
-	Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
+	/*ORDENO EL VECTOR DESORDENADO DE RAM*/
+	aux=VectorAlarmSort(VectorFood);
+
+	/*SETEO LA PRIMER ALARMA LUEGO DE ORDENAR EL VECTOR!*/
+	Chip_RTC_SetFullAlarmTime(LPC_RTC, &VectorFood[0].clock);
 
 	/* Enable matching for alarm for second, minute, hour fields only */
 	Chip_RTC_AlarmIntConfig(LPC_RTC, RTC_AMR_CIIR_IMSEC | RTC_AMR_CIIR_IMMIN | RTC_AMR_CIIR_IMHOUR, ENABLE);
@@ -452,32 +456,21 @@ int main(void)
 	/* Enable RTC (starts increase the tick counter and second counter register) */
 	Chip_RTC_Enable(LPC_RTC, ENABLE);
 
-	aux=VectorAlarmSort(VectorFood);
+
 
 
 	while (1) {
-		//if(aux==Ordenado){
+
 			__WFI();
 			if(fAlarmTimeMatched){
 				fAlarmTimeMatched = false;
 
-				Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
-				showTime(&FullTime);
-				showTime(&(VectorFood[pos].clock));
-				DEBUGOUT("cantida: %.2d\r\n", VectorFood[pos].food);
+				//Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
+				//showTime(&FullTime);
+				//showTime(&(VectorFood[pos].clock));
+				//DEBUGOUT("cantida: %.2d\r\n", VectorFood[pos].food);
 				ServirComida(VectorFood,&pos);
 			}
-		//}
-	/*	if(flag==TRUE){
-			flag=FALSE;
-			for(i=0;i<3;i++)
-			{
 
-				showTime(&(VectorFood[i].clock));
-				DEBUGOUT("cantida: %.2d\r\n", VectorFood[i].food);
-
-
-			}
-		}*/
 	}
 }
