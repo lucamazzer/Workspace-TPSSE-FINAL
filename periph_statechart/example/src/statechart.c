@@ -51,7 +51,7 @@ typedef struct{
 	bool init;
 
 }food_t;
-typedef enum hora{mayor, menor }status_time;
+typedef enum hora{mayor, menor, ordenado }status_time;
 
 #define SCT_PWM_RATE   50        /* PWM frequency 50 Hz */
 
@@ -205,7 +205,7 @@ void VAlarm_ordenar(RTC_TIME_T * AlarmVector){
 }
 
 
-
+/*MAYOR ES QUE VIENE DESPUES */
 status_time Check_Time(RTC_TIME_T time1 , RTC_TIME_T time2) // chequea si time1 es mayor o menor que time2
 {
 	if (time1.time[RTC_TIMETYPE_HOUR]>time2.time[RTC_TIMETYPE_HOUR])
@@ -249,6 +249,29 @@ status_time Check_Time(RTC_TIME_T time1 , RTC_TIME_T time2) // chequea si time1 
 	}
 }
 
+
+status_time VectorAlarmSort(food_t * FoodV)
+{
+	uint8_t ordenado=0;
+	uint8_t i;
+	uint8_t j;
+
+	for(i=0;i<MAX_POS -1 && ordenado ==0; i++)
+	{	ordenado=1;
+		for(j=0;j< MAX_POS-(i+1);j++)
+		{
+			if(Check_Time(VectorFood[j].clock,VectorFood[j+1].clock)== mayor)
+			{
+				swap(VectorFood,j,j+1);
+				ordenado=0;
+			}
+		}
+	}
+
+}
+
+/*  NO SIRVEPOR AHORA ES MEJOR ORDENAR EL VECTOR D EMENOR A MAYOR Y ver si cada uno paso
+ *
 void Set_next_Alarm(food_t * FoodVector){
 
 	RTC_TIME_T FullTime;
@@ -256,27 +279,36 @@ void Set_next_Alarm(food_t * FoodVector){
 	uint8_t NextAlarm=0;
 	uint8_t pivot=0;
 
-	if(FoodVector[pivot].clock.time[RTC_TIMETYPE_HOUR]>FullTime.time[RTC_TIMETYPE_HOUR])
-	{	NextAlarm=pivot;
+	if(Check_Time(VectorFood[Pivot].clock,FullTime)== mayor)// checkeo si el q esta en la posicion cero todavia no paso
+	{
+		NextAlarm=0;
 		pivot++;
-		if(FoodVector[NextAlarm].clock.time[RTC_TIMETYPE_HOUR]>FoodVector[pivot].clock.time[RTC_TIMETYPE_HOUR])
-		{   NextAlarm=pivot;
-			pivot++;
-			if(FoodVector[NextAlarm].clock.time[RTC_TIMETYPE_HOUR]>FoodVector[pivot].clock.time[RTC_TIMETYPE_HOUR])
-			{
-				NextAlarm=pivot;
-			}
-		}
-		else
+		if(Check_Time(VectorFood[NextAlarm].clock,VectorFood[Pivot].clock)== mayor)// si laproxima alarma esta dps de la del pivot
 		{
-
 
 		}
 
 	}
+	else
+	{
+		pivot++;
+		if(Check_Time(VectorFood[Pivot].clock,FullTime)== mayor)// checkeo si el q esta en la posicion 1 todavia no paso
+		{
 
+		}
+		else
+		{	pivot++;
+			if(Check_Time(VectorFood[Pivot].clock,FullTime)== mayor) // checkeo si el 3ro no paso (si ninguno paso pongo el menor!)
+			{
+
+			}
+
+		}
+	}
 
 }
+*/
+
 
 void ServirComida (food_t * Comida, uint8_t * position){
 	uint8_t i;
