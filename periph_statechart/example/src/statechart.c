@@ -178,7 +178,7 @@ void swap(food_t * VectorFood, uint8_t pos1,uint8_t pos2){
 	VectorFood[pos1].clock.time[RTC_TIMETYPE_YEAR]    = aux.clock.time[RTC_TIMETYPE_YEAR];
 	VectorFood[pos1].food=aux.food;
 }
-/* ordena el vector de alarma cabezamente*/
+/* ordena el vector de alarma cabezamente no lo estoy usando*/
 /*void VAlarm_ordenar(RTC_TIME_T * AlarmVector){
 
 	uint8_t pos1=0;
