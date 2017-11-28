@@ -42,7 +42,6 @@
 static volatile bool fAlarmTimeMatched;
 volatile bool ServoFlag=false;
 static uint32_t tick_ct = 0;
-static volatile bool fAlarmTimeMatched;
 
 typedef struct{
 
@@ -52,7 +51,7 @@ typedef struct{
 	bool nextday;
 
 }food_t;
-typedef enum hora{mayor, menor, ordenado }status_time;
+typedef enum hora{mayor, menor,Ordenado }status_time;
 
 #define SCT_PWM_RATE   50        /* PWM frequency 50 Hz */
 
@@ -60,7 +59,7 @@ typedef enum hora{mayor, menor, ordenado }status_time;
 #define TICKRATE_HZ     100        /* 1 ms Tick rate */
 #define DUTY_CYCLE 90/100	//Duty Cycle configurado 180 grados
 #define DUTY_CYCLE_full 98/100	//Duty Cycle configurado 0 grados
-#define MAX_POS 3
+#define MAX_POS 3 // maxima cantidad de alarmas!
 
 
 /*****************************************************************************
@@ -111,8 +110,9 @@ void VectorFoodInit(food_t * VectorFood, RTC_TIME_T FullTime)
 		VectorFood[i].clock.time[RTC_TIMETYPE_DAYOFYEAR]=FullTime.time[RTC_TIMETYPE_DAYOFYEAR];
 		VectorFood[i].clock.time[RTC_TIMETYPE_MONTH]=FullTime.time[RTC_TIMETYPE_MONTH];
 		VectorFood[i].clock.time[RTC_TIMETYPE_YEAR]=FullTime.time[RTC_TIMETYPE_YEAR];
-		//VectorFood[i].food=0;
+		VectorFood[i].food=0;
 		VectorFood[i].init=FALSE;
+		VectorFood[i].nextday=FALSE;
 	}
 
 }
@@ -306,6 +306,7 @@ status_time VectorAlarmSort(food_t * VectorFood)
 			}
 		}
 	}
+	return Ordenado;
 
 }
 
@@ -414,13 +415,13 @@ int main(void)
 
 	/* Set ALARM time */
 
-	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 30; // prueba d ealarma
-	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 43;
-	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 58;
+	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 30; // prueba d ealarma
+	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 43;
+	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 58;
 
-	VectorFood[2].food=1;
-	VectorFood[0].food=2;
-	VectorFood[1].food=3;
+	VectorFood[0].food=1;
+	VectorFood[1].food=2;
+	VectorFood[2].food=3;
 
 
 	Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[0].clock));
@@ -437,17 +438,17 @@ int main(void)
 	/* Enable RTC (starts increase the tick counter and second counter register) */
 	Chip_RTC_Enable(LPC_RTC, ENABLE);
 
-	aux=VectorAlarmSort(VectorFood);
+	//aux=VectorAlarmSort(VectorFood);
 
 
 
 	while (1) {
-		if(aux==ordenado){
+		//if(aux==Ordenado){
 			__WFI();
 			if(fAlarmTimeMatched){
 				fAlarmTimeMatched = false;
 				ServirComida(VectorFood,&pos);
 			}
-		}
+		//}
 	}
 }
