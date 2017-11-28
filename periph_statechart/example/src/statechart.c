@@ -361,6 +361,15 @@ void RTC_IRQHandler(void)
 	}
 }
 
+static void showTime(RTC_TIME_T *pTime)
+{
+	DEBUGOUT("Time: %.2d:%.2d:%.2d %.2d/%.2d/%.4d\r\n", pTime->time[RTC_TIMETYPE_HOUR],
+			 pTime->time[RTC_TIMETYPE_MINUTE],
+			 pTime->time[RTC_TIMETYPE_SECOND],
+			 pTime->time[RTC_TIMETYPE_MONTH],
+			 pTime->time[RTC_TIMETYPE_DAYOFMONTH],
+			 pTime->time[RTC_TIMETYPE_YEAR]);
+}
 
 
 int main(void)
@@ -372,12 +381,13 @@ int main(void)
 	food_t VectorFood_PRUEBA[MAX_POS];
 	uint8_t pos=0;
 	status_time aux;
-
+	bool flag;
+	flag=TRUE;
 
 
 	SystemCoreClockUpdate();
 	Board_Init();
-	//uint8_t i;
+	uint8_t i;
 
 	/* Initialize the SCT as PWM and set frequency */
 	Chip_SCTPWM_Init(LPC_SCT);
@@ -446,11 +456,26 @@ int main(void)
 
 
 	while (1) {
-		if(aux==Ordenado){
+		/*if(aux==Ordenado){
 			__WFI();
 			if(fAlarmTimeMatched){
 				fAlarmTimeMatched = false;
+
+				Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
+				showTime(&FullTime);
+								showTime(&(VectorFood[pos].clock));
 				ServirComida(VectorFood,&pos);
+			}
+		}*/
+		if(flag==TRUE){
+			flag=FALSE;
+			for(i=0;i<3;i++)
+			{
+
+				showTime(&(VectorFood[i].clock));
+				DEBUGOUT("cantida: %.2d\r\n", VectorFood[i].food);
+
+
 			}
 		}
 	}
