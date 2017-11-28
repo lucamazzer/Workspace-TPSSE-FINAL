@@ -260,37 +260,37 @@ void swap(food_t * VectorFood, uint8_t pos1,uint8_t pos2){
 */
 
 /*MAYOR ES QUE VIENE DESPUES */
-status_time Check_Time(RTC_TIME_T time1 , RTC_TIME_T time2) // chequea si time1 es mayor o menor que time2
+status_time Check_Time(RTC_TIME_T * time1 , RTC_TIME_T * time2) // chequea si time1 es mayor o menor que time2
 {
-	if (time1.time[RTC_TIMETYPE_HOUR]>time2.time[RTC_TIMETYPE_HOUR])
+	if (time1->time[RTC_TIMETYPE_HOUR]>time2->time[RTC_TIMETYPE_HOUR])
 	{
 		return mayor;
 	}
 	else
 	{
-		if(time1.time[RTC_TIMETYPE_HOUR]<time2.time[RTC_TIMETYPE_HOUR])
+		if(time1->time[RTC_TIMETYPE_HOUR]<time2->time[RTC_TIMETYPE_HOUR])
 		{
 			return menor;
 		}
 		else
 		{
-			if(time1.time[RTC_TIMETYPE_HOUR]==time2.time[RTC_TIMETYPE_HOUR])
+			if(time1->time[RTC_TIMETYPE_HOUR]==time2->time[RTC_TIMETYPE_HOUR])
 			{
-				if (time1.time[RTC_TIMETYPE_MINUTE]>time2.time[RTC_TIMETYPE_MINUTE])
+				if (time1->time[RTC_TIMETYPE_MINUTE]>time2->time[RTC_TIMETYPE_MINUTE])
 				{
 					return mayor;
 				}
 				else
 				{
-					if(time1.time[RTC_TIMETYPE_MINUTE]<time2.time[RTC_TIMETYPE_MINUTE])
+					if(time1->time[RTC_TIMETYPE_MINUTE]<time2->time[RTC_TIMETYPE_MINUTE])
 					{
 						return menor;
 					}
 					else
 					{
-						if(time1.time[RTC_TIMETYPE_MINUTE]==time2.time[RTC_TIMETYPE_MINUTE])
+						if(time1->time[RTC_TIMETYPE_MINUTE]==time2->time[RTC_TIMETYPE_MINUTE])
 						{
-							if(time1.time[RTC_TIMETYPE_SECOND]<time2.time[RTC_TIMETYPE_SECOND])
+							if(time1->time[RTC_TIMETYPE_SECOND]<time2->time[RTC_TIMETYPE_SECOND])
 							{
 								return menor;
 							}
@@ -313,7 +313,7 @@ status_time VectorAlarmSort(food_t * VectorFood)
 	{	ordenado=1;
 		for(j=0;j< MAX_POS-(i+1);j++)
 		{
-			if(Check_Time(VectorFood[j].clock,VectorFood[j+1].clock)== mayor)
+			if(Check_Time(&VectorFood[j].clock,&VectorFood[j+1].clock)== mayor)
 			{
 				swap(VectorFood,j,j+1);
 				ordenado=0;
