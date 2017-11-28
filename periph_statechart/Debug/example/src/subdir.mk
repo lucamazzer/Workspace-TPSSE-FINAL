@@ -4,18 +4,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../example/src/Rom.c \
 ../example/src/TimerTicks.c \
 ../example/src/cr_startup_lpc43xx.c \
 ../example/src/statechart.c \
 ../example/src/sysinit.c 
 
 OBJS += \
+./example/src/Rom.o \
 ./example/src/TimerTicks.o \
 ./example/src/cr_startup_lpc43xx.o \
 ./example/src/statechart.o \
 ./example/src/sysinit.o 
 
 C_DEPS += \
+./example/src/Rom.d \
 ./example/src/TimerTicks.d \
 ./example/src/cr_startup_lpc43xx.d \
 ./example/src/statechart.d \

@@ -62,6 +62,7 @@ typedef enum hora{mayor, menor,Ordenado }status_time;
 #define MAX_POS 3 // maxima cantidad de alarmas!
 
 
+
 /*****************************************************************************
  * Private functions
  ****************************************************************************/
@@ -368,8 +369,11 @@ int main(void)
 	fAlarmTimeMatched = 0;
 	RTC_TIME_T FullTime;
 	food_t VectorFood[MAX_POS];
+	food_t VectorFood_PRUEBA[MAX_POS];
 	uint8_t pos=0;
 	status_time aux;
+
+
 
 	SystemCoreClockUpdate();
 	Board_Init();
@@ -415,9 +419,9 @@ int main(void)
 
 	/* Set ALARM time */
 
-	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 30; // prueba d ealarma
-	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 43;
-	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 58;
+	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 15; // prueba d ealarma
+	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 30;
+	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  =45;
 
 	VectorFood[0].food=1;
 	VectorFood[1].food=2;
@@ -439,7 +443,6 @@ int main(void)
 	Chip_RTC_Enable(LPC_RTC, ENABLE);
 
 	//aux=VectorAlarmSort(VectorFood);
-
 
 
 	while (1) {
