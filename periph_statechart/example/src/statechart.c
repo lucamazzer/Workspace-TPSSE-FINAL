@@ -49,6 +49,7 @@ typedef struct{
 	RTC_TIME_T clock;
 	uint8_t food;
 	bool init;
+	bool nextday;
 
 }food_t;
 typedef enum hora{mayor, menor, ordenado }status_time;
@@ -115,11 +116,12 @@ void VectorFoodInit(food_t * VectorFood, RTC_TIME_T FullTime)
 
 }
 
-void set_new_alarm(food_t * AlarmVector, uint8_t pos){
+void set_new_alarm(food_t * AlarmVector, uint8_t pos){ // tengo que modificarla para el caso en que paso el dia siguiente!
 	//RTC_TIME_T Alarm;
 	RTC_TIME_T FullTime;
 
 	Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
+
 
 	if(pos<MAX_POS){
 	    FullTime.time[RTC_TIMETYPE_SECOND]  = (AlarmVector[pos].clock).time[RTC_TIMETYPE_SECOND];
@@ -134,12 +136,42 @@ void set_new_alarm(food_t * AlarmVector, uint8_t pos){
 		Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
 	}
 }
-void swap(RTC_TIME_T * AlarmVector, uint8_t pos1,uint8_t pos2){
+void swap(food_t * VectorFood, uint8_t pos1,uint8_t pos2){
 
+	food_t aux;
 
+	aux.clock.time[RTC_TIMETYPE_SECOND]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_SECOND];
+	aux.clock.time[RTC_TIMETYPE_MINUTE]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_MINUTE];
+	aux.clock.time[RTC_TIMETYPE_HOUR]    = (VectorFood[pos1].clock).time[RTC_TIMETYPE_HOUR];
+	aux.clock.time[RTC_TIMETYPE_DAYOFMONTH]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_DAYOFMONTH];
+	aux.clock.time[RTC_TIMETYPE_DAYOFWEEK]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_DAYOFWEEK];
+	aux.clock.time[RTC_TIMETYPE_DAYOFYEAR]    = (VectorFood[pos1].clock).time[RTC_TIMETYPE_DAYOFYEAR];
+	aux.clock.time[RTC_TIMETYPE_MONTH]    = (VectorFood[pos1].clock).time[RTC_TIMETYPE_MONTH];
+	aux.clock.time[RTC_TIMETYPE_YEAR]    = (VectorFood[pos1].clock).time[RTC_TIMETYPE_YEAR];
+	aux.food=VectorFood[pos1].food;
+
+	VectorFood[pos2].clock.time[RTC_TIMETYPE_SECOND]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_SECOND];
+	VectorFood[pos2].clock.time[RTC_TIMETYPE_MINUTE]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_MINUTE];
+	VectorFood[pos2].clock.time[RTC_TIMETYPE_HOUR]    = (VectorFood[pos1].clock).time[RTC_TIMETYPE_HOUR];
+	VectorFood[pos2].clock.time[RTC_TIMETYPE_DAYOFMONTH]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_DAYOFMONTH];
+	VectorFood[pos2].clock.time[RTC_TIMETYPE_DAYOFWEEK]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_DAYOFWEEK];
+	VectorFood[pos2].clock.time[RTC_TIMETYPE_DAYOFYEAR]    = (VectorFood[pos1].clock).time[RTC_TIMETYPE_DAYOFYEAR];
+	VectorFood[pos2].clock.time[RTC_TIMETYPE_MONTH]    = (VectorFood[pos1].clock).time[RTC_TIMETYPE_MONTH];
+	VectorFood[pos2].clock.time[RTC_TIMETYPE_YEAR]    = (VectorFood[pos1].clock).time[RTC_TIMETYPE_YEAR];
+	VectorFood[pos2].food=VectorFood[pos1].food;
+
+	VectorFood[pos1].clock.time[RTC_TIMETYPE_SECOND]  = aux.clock.time[RTC_TIMETYPE_SECOND];
+	VectorFood[pos1].clock.time[RTC_TIMETYPE_MINUTE]  = aux.clock.time[RTC_TIMETYPE_MINUTE];
+	VectorFood[pos1].clock.time[RTC_TIMETYPE_HOUR]    = aux.clock.time[RTC_TIMETYPE_HOUR];
+	VectorFood[pos1].clock.time[RTC_TIMETYPE_DAYOFMONTH]  = aux.clock.time[RTC_TIMETYPE_DAYOFMONTH];
+	VectorFood[pos1].clock.time[RTC_TIMETYPE_DAYOFWEEK]  = aux.clock.time[RTC_TIMETYPE_DAYOFWEEK];
+	VectorFood[pos1].clock.time[RTC_TIMETYPE_DAYOFYEAR]    =aux.clock.time[RTC_TIMETYPE_DAYOFYEAR];
+	VectorFood[pos1].clock.time[RTC_TIMETYPE_MONTH]    =aux.clock.time[RTC_TIMETYPE_MONTH];
+	VectorFood[pos1].clock.time[RTC_TIMETYPE_YEAR]    = aux.clock.time[RTC_TIMETYPE_YEAR];
+	VectorFood[pos2].food=aux.food;
 }
 
-void VAlarm_ordenar(RTC_TIME_T * AlarmVector){
+/*void VAlarm_ordenar(RTC_TIME_T * AlarmVector){
 
 	uint8_t pos1=0;
 	uint8_t pos2=1;
@@ -203,7 +235,7 @@ void VAlarm_ordenar(RTC_TIME_T * AlarmVector){
 
      }
 }
-
+*/
 
 /*MAYOR ES QUE VIENE DESPUES */
 status_time Check_Time(RTC_TIME_T time1 , RTC_TIME_T time2) // chequea si time1 es mayor o menor que time2
@@ -312,8 +344,10 @@ void Set_next_Alarm(food_t * FoodVector){
 
 void ServirComida (food_t * Comida, uint8_t * position){
 	uint8_t i;
+	uint8_t cantidad;
 	Chip_SCTPWM_Start(LPC_SCT);
-	for(i=0;i<((*position)+1)*2;i++){
+	cantidad= Comida[*position].food;
+	for(i=0;i<cantidad*2;i++){
 		toggle_servo ();
 		tick_ct=0;
 		while(tick_ct<150){
@@ -350,8 +384,6 @@ void SCT_IRQHandler(void){
 }
 
 
-
-
 void RTC_IRQHandler(void)
 {
 	/* Check for alarm match */
@@ -371,6 +403,8 @@ int main(void)
 	RTC_TIME_T FullTime;
 	food_t VectorFood[MAX_POS];
 	uint8_t pos=0;
+	status_time aux;
+
 	SystemCoreClockUpdate();
 	Board_Init();
 	//uint8_t i;
@@ -415,9 +449,14 @@ int main(void)
 
 	/* Set ALARM time */
 
-	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 15; // prueba d ealarma
-	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 30;
-	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 45;
+	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 15; // prueba d ealarma
+	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 30;
+	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 45;
+
+	VectorFood[2].food=1;
+	VectorFood[0].food=2;
+	VectorFood[1].food=3;
+
 
 	Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[0].clock));
 
@@ -433,6 +472,7 @@ int main(void)
 	/* Enable RTC (starts increase the tick counter and second counter register) */
 	Chip_RTC_Enable(LPC_RTC, ENABLE);
 
+	aux=VectorAlarmSort(VectorFood);
 
 
 
