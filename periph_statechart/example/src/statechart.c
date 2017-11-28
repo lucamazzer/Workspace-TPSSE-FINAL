@@ -58,7 +58,7 @@ typedef enum hora{mayor, menor,Ordenado }status_time;
 /* Systick timer tick rate, to change duty cycle */
 #define TICKRATE_HZ     100        /* 1 ms Tick rate */
 #define DUTY_CYCLE 90/100	//Duty Cycle configurado 180 grados
-#define DUTY_CYCLE_full 98/100	//Duty Cycle configurado 0 grados
+#define DUTY_CYCLE_full 97/100	//Duty Cycle configurado 0 grados
 #define MAX_POS 3 // maxima cantidad de alarmas!
 
 
@@ -335,9 +335,10 @@ int main(void)
 	Chip_SCTPWM_SetOutPin(LPC_SCT, 1, 2);
 
 	/* Start with 0% duty cycle */
-	//Chip_SCTPWM_SetDutyCycle(LPC_SCT, 1, Chip_SCTPWM_GetTicksPerCycle(LPC_SCT)*DUTY_CYCLE );
+	//Chip_SCTPWM_SetDutyCycle(LPC_SCT, 1, Chip_SCTPWM_GetTicksPerCycle(LPC_SCT)*DUTY_CYCLE);
 	//Chip_SCTPWM_Start(LPC_SCT);
 	//Chip_SCT_EnableEventInt(LPC_SCT, SCT_EVT_1);
+//	Chip_SCTPWM_Stop(LPC_SCT);
 
 	/* Enable SysTick Timer */
 	SysTick_Config(SystemCoreClock / TICKRATE_HZ);
