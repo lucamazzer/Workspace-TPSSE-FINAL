@@ -419,13 +419,13 @@ int main(void)
 
 	/* Set ALARM time */
 
-	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 15; // prueba d ealarma
-	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 30;
-	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  =45;
+	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 15; // prueba d ealarma
+	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 30;
+	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  =45;
 
-	VectorFood[0].food=1;
-	VectorFood[1].food=2;
-	VectorFood[2].food=3;
+	VectorFood[1].food=1;
+	VectorFood[2].food=2;
+	VectorFood[0].food=3;
 
 
 	Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[0].clock));
@@ -442,16 +442,16 @@ int main(void)
 	/* Enable RTC (starts increase the tick counter and second counter register) */
 	Chip_RTC_Enable(LPC_RTC, ENABLE);
 
-	//aux=VectorAlarmSort(VectorFood);
+	aux=VectorAlarmSort(VectorFood);
 
 
 	while (1) {
-		//if(aux==Ordenado){
+		if(aux==Ordenado){
 			__WFI();
 			if(fAlarmTimeMatched){
 				fAlarmTimeMatched = false;
 				ServirComida(VectorFood,&pos);
 			}
-		//}
+		}
 	}
 }
