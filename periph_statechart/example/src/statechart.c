@@ -437,8 +437,8 @@ int main(void)
 	VectorFood[2].food=2;
 	VectorFood[0].food=3;
 
-
-	Chip_RTC_SetFullAlarmTime(LPC_RTC, &(VectorFood[0].clock));
+	FullTime.time[RTC_TIMETYPE_SECOND]  = 15;
+	Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
 
 	/* Enable matching for alarm for second, minute, hour fields only */
 	Chip_RTC_AlarmIntConfig(LPC_RTC, RTC_AMR_CIIR_IMSEC | RTC_AMR_CIIR_IMMIN | RTC_AMR_CIIR_IMHOUR, ENABLE);
@@ -456,18 +456,19 @@ int main(void)
 
 
 	while (1) {
-		/*if(aux==Ordenado){
+		//if(aux==Ordenado){
 			__WFI();
 			if(fAlarmTimeMatched){
 				fAlarmTimeMatched = false;
 
 				Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
 				showTime(&FullTime);
-								showTime(&(VectorFood[pos].clock));
+				showTime(&(VectorFood[pos].clock));
+				DEBUGOUT("cantida: %.2d\r\n", VectorFood[pos].food);
 				ServirComida(VectorFood,&pos);
 			}
-		}*/
-		if(flag==TRUE){
+		//}
+	/*	if(flag==TRUE){
 			flag=FALSE;
 			for(i=0;i<3;i++)
 			{
@@ -477,6 +478,6 @@ int main(void)
 
 
 			}
-		}
+		}*/
 	}
 }
