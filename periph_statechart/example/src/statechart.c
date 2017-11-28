@@ -148,15 +148,15 @@ void swap(food_t * VectorFood, uint8_t pos1,uint8_t pos2){
 
 	food_t aux;
 
-	aux.clock.time[RTC_TIMETYPE_SECOND]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_SECOND];
-	aux.clock.time[RTC_TIMETYPE_MINUTE]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_MINUTE];
-	aux.clock.time[RTC_TIMETYPE_HOUR]    = (VectorFood[pos1].clock).time[RTC_TIMETYPE_HOUR];
-	aux.clock.time[RTC_TIMETYPE_DAYOFMONTH]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_DAYOFMONTH];
-	aux.clock.time[RTC_TIMETYPE_DAYOFWEEK]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_DAYOFWEEK];
-	aux.clock.time[RTC_TIMETYPE_DAYOFYEAR]    = (VectorFood[pos1].clock).time[RTC_TIMETYPE_DAYOFYEAR];
-	aux.clock.time[RTC_TIMETYPE_MONTH]    = (VectorFood[pos1].clock).time[RTC_TIMETYPE_MONTH];
-	aux.clock.time[RTC_TIMETYPE_YEAR]    = (VectorFood[pos1].clock).time[RTC_TIMETYPE_YEAR];
-	aux.food=VectorFood[pos1].food;
+	aux.clock.time[RTC_TIMETYPE_SECOND]  = (VectorFood[pos2].clock).time[RTC_TIMETYPE_SECOND];
+	aux.clock.time[RTC_TIMETYPE_MINUTE]  = (VectorFood[pos2].clock).time[RTC_TIMETYPE_MINUTE];
+	aux.clock.time[RTC_TIMETYPE_HOUR]    = (VectorFood[pos2].clock).time[RTC_TIMETYPE_HOUR];
+	aux.clock.time[RTC_TIMETYPE_DAYOFMONTH]  = (VectorFood[pos2].clock).time[RTC_TIMETYPE_DAYOFMONTH];
+	aux.clock.time[RTC_TIMETYPE_DAYOFWEEK]  = (VectorFood[pos2].clock).time[RTC_TIMETYPE_DAYOFWEEK];
+	aux.clock.time[RTC_TIMETYPE_DAYOFYEAR]    = (VectorFood[pos2].clock).time[RTC_TIMETYPE_DAYOFYEAR];
+	aux.clock.time[RTC_TIMETYPE_MONTH]    = (VectorFood[pos2].clock).time[RTC_TIMETYPE_MONTH];
+	aux.clock.time[RTC_TIMETYPE_YEAR]    = (VectorFood[pos2].clock).time[RTC_TIMETYPE_YEAR];
+	aux.food=VectorFood[pos2].food;
 
 	VectorFood[pos2].clock.time[RTC_TIMETYPE_SECOND]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_SECOND];
 	VectorFood[pos2].clock.time[RTC_TIMETYPE_MINUTE]  = (VectorFood[pos1].clock).time[RTC_TIMETYPE_MINUTE];
@@ -176,7 +176,7 @@ void swap(food_t * VectorFood, uint8_t pos1,uint8_t pos2){
 	VectorFood[pos1].clock.time[RTC_TIMETYPE_DAYOFYEAR]    =aux.clock.time[RTC_TIMETYPE_DAYOFYEAR];
 	VectorFood[pos1].clock.time[RTC_TIMETYPE_MONTH]    =aux.clock.time[RTC_TIMETYPE_MONTH];
 	VectorFood[pos1].clock.time[RTC_TIMETYPE_YEAR]    = aux.clock.time[RTC_TIMETYPE_YEAR];
-	VectorFood[pos2].food=aux.food;
+	VectorFood[pos1].food=aux.food;
 }
 /* ordena el vector de alarma cabezamente*/
 /*void VAlarm_ordenar(RTC_TIME_T * AlarmVector){
@@ -414,9 +414,9 @@ int main(void)
 
 	/* Set ALARM time */
 
-	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 20; // prueba d ealarma
-	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 35;
-	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 50;
+	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 30; // prueba d ealarma
+	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 43;
+	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 58;
 
 	VectorFood[2].food=1;
 	VectorFood[0].food=2;
