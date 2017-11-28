@@ -313,7 +313,7 @@ void Set_next_Alarm(food_t * FoodVector){
 void ServirComida (food_t * Comida, uint8_t * position){
 	uint8_t i;
 	Chip_SCTPWM_Start(LPC_SCT);
-	for(i=0;i<3;i++){
+	for(i=0;i<((*position)+1)*2;i++){
 		toggle_servo ();
 		tick_ct=0;
 		while(tick_ct<150){
