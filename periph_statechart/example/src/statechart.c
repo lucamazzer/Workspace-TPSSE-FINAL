@@ -97,6 +97,7 @@ void toggle_flag(void){
  * * * * * * * * * * * * * * * * * * * * * * * * *
  * * * * * * * * * * * * * * *  * * * * * * * * * */
 
+/*inicializa el vector de comida y horario no inicializa la comida x ahora*/
 void VectorFoodInit(food_t * VectorFood, RTC_TIME_T FullTime)
 { int i;
 
@@ -110,13 +111,17 @@ void VectorFoodInit(food_t * VectorFood, RTC_TIME_T FullTime)
 		VectorFood[i].clock.time[RTC_TIMETYPE_DAYOFYEAR]=FullTime.time[RTC_TIMETYPE_DAYOFYEAR];
 		VectorFood[i].clock.time[RTC_TIMETYPE_MONTH]=FullTime.time[RTC_TIMETYPE_MONTH];
 		VectorFood[i].clock.time[RTC_TIMETYPE_YEAR]=FullTime.time[RTC_TIMETYPE_YEAR];
-		VectorFood[i].food=0;
+		//VectorFood[i].food=0;
 		VectorFood[i].init=FALSE;
 	}
 
 }
 
-void set_new_alarm(food_t * AlarmVector, uint8_t pos){ // tengo que modificarla para el caso en que paso el dia siguiente!
+
+/* setea una nueva alarma segun la posicion del vector que se le pase*/
+/* tengo que modificarla para el caso en el que se pase de dia*/
+
+ void set_new_alarm(food_t * AlarmVector, uint8_t pos){
 	//RTC_TIME_T Alarm;
 	RTC_TIME_T FullTime;
 
@@ -136,6 +141,9 @@ void set_new_alarm(food_t * AlarmVector, uint8_t pos){ // tengo que modificarla 
 		Chip_RTC_SetFullAlarmTime(LPC_RTC, &FullTime);
 	}
 }
+
+
+/*swapea dos posiciones del vector copiando paso a paso*/
 void swap(food_t * VectorFood, uint8_t pos1,uint8_t pos2){
 
 	food_t aux;
@@ -170,7 +178,7 @@ void swap(food_t * VectorFood, uint8_t pos1,uint8_t pos2){
 	VectorFood[pos1].clock.time[RTC_TIMETYPE_YEAR]    = aux.clock.time[RTC_TIMETYPE_YEAR];
 	VectorFood[pos2].food=aux.food;
 }
-
+/* ordena el vector de alarma cabezamente*/
 /*void VAlarm_ordenar(RTC_TIME_T * AlarmVector){
 
 	uint8_t pos1=0;
@@ -281,7 +289,6 @@ status_time Check_Time(RTC_TIME_T time1 , RTC_TIME_T time2) // chequea si time1 
 	}
 }
 
-
 status_time VectorAlarmSort(food_t * VectorFood)
 {
 	uint8_t ordenado=0;
@@ -301,46 +308,6 @@ status_time VectorAlarmSort(food_t * VectorFood)
 	}
 
 }
-
-/*  NO SIRVEPOR AHORA ES MEJOR ORDENAR EL VECTOR D EMENOR A MAYOR Y ver si cada uno paso
- *
-void Set_next_Alarm(food_t * FoodVector){
-
-	RTC_TIME_T FullTime;
-	Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
-	uint8_t NextAlarm=0;
-	uint8_t pivot=0;
-
-	if(Check_Time(VectorFood[Pivot].clock,FullTime)== mayor)// checkeo si el q esta en la posicion cero todavia no paso
-	{
-		NextAlarm=0;
-		pivot++;
-		if(Check_Time(VectorFood[NextAlarm].clock,VectorFood[Pivot].clock)== mayor)// si laproxima alarma esta dps de la del pivot
-		{
-
-		}
-
-	}
-	else
-	{
-		pivot++;
-		if(Check_Time(VectorFood[Pivot].clock,FullTime)== mayor)// checkeo si el q esta en la posicion 1 todavia no paso
-		{
-
-		}
-		else
-		{	pivot++;
-			if(Check_Time(VectorFood[Pivot].clock,FullTime)== mayor) // checkeo si el 3ro no paso (si ninguno paso pongo el menor!)
-			{
-
-			}
-
-		}
-	}
-
-}
-*/
-
 
 void ServirComida (food_t * Comida, uint8_t * position){
 	uint8_t i;
@@ -368,8 +335,6 @@ void ServirComida (food_t * Comida, uint8_t * position){
  *  * * * * HANDLES DE INTERRUPCIONES * * * * * * *
  * * * * * * * * * * * * * * * * * * * * * * * * *
  * * * * * * * * * * * * * * *  * * * * * * * * * */
-
-
 
 void SysTick_Handler(void)
 {
@@ -449,9 +414,9 @@ int main(void)
 
 	/* Set ALARM time */
 
-	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 15; // prueba d ealarma
-	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 30;
-	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 45;
+	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 20; // prueba d ealarma
+	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  = 35;
+	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 50;
 
 	VectorFood[2].food=1;
 	VectorFood[0].food=2;
@@ -477,10 +442,12 @@ int main(void)
 
 
 	while (1) {
-		__WFI();
-		if(fAlarmTimeMatched){
-			fAlarmTimeMatched = false;
-			ServirComida(VectorFood,&pos);
+		if(aux==ordenado){
+			__WFI();
+			if(fAlarmTimeMatched){
+				fAlarmTimeMatched = false;
+				ServirComida(VectorFood,&pos);
+			}
 		}
 	}
 }
