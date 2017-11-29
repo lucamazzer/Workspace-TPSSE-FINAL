@@ -387,6 +387,8 @@ void UART3_IRQHandler()
 	//ReadTillEOL(LPC_USART3,recibido0,sizeof(recibido0));
 	Chip_UART_ReadBlocking(LPC_USART3, buffer, 8);
 	Chip_UART_IntDisable(LPC_USART3, UART_IER_RBRINT);
+	Chip_UART_ReadLineStatus(LPC_USART3);
+	//Chip_UART_SetUpFIFO();
 }
 
 
@@ -479,7 +481,7 @@ int main(void)
 
 		__WFI();// ESPERA UNA ALARMA O UN EVENTO DE UART
 
-		//toggle_servo ();
+	//toggle_servo ();
 
 		if(fAlarmTimeMatched){
 			fAlarmTimeMatched = false;
@@ -490,8 +492,8 @@ int main(void)
 			DEBUGOUT("cantida: %.2d\r\n", VectorFood[pos].food);
 			ServirComida(VectorFood,&pos);
 		}
-/*
-		if(USART3_IRQ_flag=true)
+
+		/*if(USART3_IRQ_flag=true)
 		{
 			USART3_IRQ_flag=false;
 			Chip_RTC_GetFullTime(LPC_RTC,&FullTime);
