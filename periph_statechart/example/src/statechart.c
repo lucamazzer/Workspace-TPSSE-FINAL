@@ -30,6 +30,7 @@
  */
 
 #include "board.h"
+#include "string.h"
 //#include "funciones.h"
 /*****************************************************************************
  * Private types/enumerations/variables
@@ -300,7 +301,7 @@ void USARTconfig()
 	/* Enable Interrupt for UART channel */
 	NVIC_EnableIRQ(USART2_IRQn);
 	Chip_UART_Init(LPC_USART3);
-	Chip_UART_SetBaud(LPC_USART3, 38400);  /* Set Baud rate */
+	Chip_UART_SetBaud(LPC_USART3, 9600);  /* Set Baud rate */
 	Chip_UART_SetupFIFOS(LPC_USART3, UART_FCR_FIFO_EN | UART_FCR_TRG_LEV0); /* Modify FCR (FIFO Control Register)*/
 	Chip_UART_TXEnable(LPC_USART3); /* Enable UART Transmission */
 	Chip_UART_IntEnable(LPC_USART3, UART_IER_RBRINT);
@@ -311,7 +312,34 @@ void USARTconfig()
 	NVIC_EnableIRQ(USART3_IRQn);
 }
 
+/*
+void parseBufferAlarm(char * buffer , food_t * ALARM)
+{	char * aux;
+	char* aux2;
+	char * ChHora;
+	uint8_t Hora;
+	uint8_t Minutos;
+	uint8_t comida;
+	char * ChComida;
+	/*formato recibido #HH:MM;NN&*/
+	/*aux = strtok(buffer, ';' ); // separo la hora de la cantiad
+	ChHora=aux;
+		strcpy(Chhora,aux);
+	aux=strtok(NULL,';');
+	strcpy(ChComida,aux);
 
+	ChComida[3]='\0';
+	aux= strtok(ChHora, ':' );
+	strcpy(aux2,aux);
+	Hora=atoi(aux2);// me falta eliminar el # tengo que hacer una funcion que lo borre
+	aux= strtok(NULL, ':' );
+	strcpy(aux2,aux);
+	aux2[3]='\0';
+	Minutos=atoi(aux2);
+
+	/*tengo q castear a uint8 y pasrlo al vector food*/
+
+//}
 
 
 
@@ -357,7 +385,7 @@ void UART3_IRQHandler()
 	Chip_UART_IntDisable(LPC_USART2, UART_IER_RBRINT);
 	USART3_IRQ_flag=true;
 	//ReadTillEOL(LPC_USART3,recibido0,sizeof(recibido0));
-	Chip_UART_ReadBlocking(LPC_USART3, buffer, 10);
+	Chip_UART_ReadBlocking(LPC_USART3, buffer, 8);
 	Chip_UART_IntDisable(LPC_USART3, UART_IER_RBRINT);
 }
 
@@ -453,27 +481,31 @@ int main(void)
 
 		//toggle_servo ();
 
-		/*if(fAlarmTimeMatched){
+		if(fAlarmTimeMatched){
 			fAlarmTimeMatched = false;
 
-			//Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
-			//showTime(&FullTime);
-			//showTime(&(VectorFood[pos].clock));
-			//DEBUGOUT("cantida: %.2d\r\n", VectorFood[pos].food);
+			Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
+			showTime(&FullTime);
+			showTime(&(VectorFood[pos].clock));
+			DEBUGOUT("cantida: %.2d\r\n", VectorFood[pos].food);
 			ServirComida(VectorFood,&pos);
-		}*/
-
-		/*if(USART3_IRQ_flag=true)
+		}
+/*
+		if(USART3_IRQ_flag=true)
 		{
 			USART3_IRQ_flag=false;
-			debo
+			Chip_RTC_GetFullTime(LPC_RTC,&FullTime);
+			showTime(&FullTime);
+
+			DEBUGOUT("recibi en el buffer: %s \r\n", buffer);
+
 
 		}*/
-		if(state)
+		/*if(state)
 		{state=0;
 		Chip_RTC_GetFullTime(LPC_RTC,&FullTime);
 		showTime(&FullTime);
-		}
+		}*/
 
 	}
 }
