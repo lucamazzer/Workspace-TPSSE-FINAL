@@ -5,7 +5,7 @@
  * Generated linker script file for LPC4337
  * Created from library.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.23
- * LPCXpresso v8.2.2 [Build 650] [2016-09-09]  on 28/11/2017 10:59:37
+ * LPCXpresso v8.2.2 [Build 650] [2016-09-09]  on 28/11/2017 23:00:47
  */
 
 GROUP (

@@ -58,7 +58,7 @@ typedef enum hora{mayor, menor,Ordenado }status_time;
 /* Systick timer tick rate, to change duty cycle */
 #define TICKRATE_HZ     100        /* 1 ms Tick rate */
 #define DUTY_CYCLE 90/100	//Duty Cycle configurado 180 grados
-#define DUTY_CYCLE_full 97/100	//Duty Cycle configurado 0 grados
+#define DUTY_CYCLE_full 98/100	//Duty Cycle configurado 0 grados
 #define MAX_POS 3 // maxima cantidad de alarmas!
 
 
@@ -319,7 +319,7 @@ int main(void)
 	food_t VectorFood_PRUEBA[MAX_POS];
 	uint8_t pos=0;
 	status_time aux;
-
+	tick_ct=0;
 	SystemCoreClockUpdate();
 	Board_Init();
 	uint8_t i;
@@ -335,10 +335,10 @@ int main(void)
 	Chip_SCTPWM_SetOutPin(LPC_SCT, 1, 2);
 
 	/* Start with 0% duty cycle */
-	//Chip_SCTPWM_SetDutyCycle(LPC_SCT, 1, Chip_SCTPWM_GetTicksPerCycle(LPC_SCT)*DUTY_CYCLE);
-	//Chip_SCTPWM_Start(LPC_SCT);
-	//Chip_SCT_EnableEventInt(LPC_SCT, SCT_EVT_1);
-//	Chip_SCTPWM_Stop(LPC_SCT);
+	/*Chip_SCTPWM_SetDutyCycle(LPC_SCT, 1, Chip_SCTPWM_GetTicksPerCycle(LPC_SCT)*DUTY_CYCLE);
+	Chip_SCTPWM_Start(LPC_SCT);
+//	Chip_SCT_EnableEventInt(LPC_SCT, SCT_EVT_1);
+//	Chip_SCTPWM_Stop(LPC_SCT);*/
 
 	/* Enable SysTick Timer */
 	SysTick_Config(SystemCoreClock / TICKRATE_HZ);
@@ -364,7 +364,7 @@ int main(void)
 	VectorFoodInit(VectorFood,& FullTime);
 
 	/* Set ALARM time */
-	/*HARCODEO ALARMAS PARA PROBAR EN RAM*/
+	/*HARCODEO ALARMAS PARA PROBAR EN RAM*/ /*ESTO DESPUES DEBERIA RECIBIRLO POR BT */
 	VectorFood[1].clock.time[RTC_TIMETYPE_SECOND]  = 15; // prueba d ealarma
 	VectorFood[2].clock.time[RTC_TIMETYPE_SECOND]  = 30;
 	VectorFood[0].clock.time[RTC_TIMETYPE_SECOND]  =45;
@@ -396,16 +396,18 @@ int main(void)
 
 	while (1) {
 
-			__WFI();
-			if(fAlarmTimeMatched){
-				fAlarmTimeMatched = false;
+		__WFI();// ESPERA UNA ALARMA O UN EVENTO DE UART
 
-				//Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
-				//showTime(&FullTime);
-				//showTime(&(VectorFood[pos].clock));
-				//DEBUGOUT("cantida: %.2d\r\n", VectorFood[pos].food);
-				ServirComida(VectorFood,&pos);
-			}
+		//toggle_servo ();
 
+		if(fAlarmTimeMatched){
+			fAlarmTimeMatched = false;
+
+			//Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
+			//showTime(&FullTime);
+			//showTime(&(VectorFood[pos].clock));
+			//DEBUGOUT("cantida: %.2d\r\n", VectorFood[pos].food);
+			ServirComida(VectorFood,&pos);
+		}
 	}
 }
