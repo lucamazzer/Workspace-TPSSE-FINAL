@@ -263,7 +263,7 @@ void ServirComida (food_t * Comida, uint8_t * position){
 	uint8_t cantidad;
 	Chip_SCTPWM_Start(LPC_SCT);
 	cantidad= Comida[*position].food;
-	for(i=0;i<cantidad*2;i++){
+	for(i=0;i<cantidad;i++){
 		toggle_servo ();
 		tick_ct=0;
 		while(tick_ct<150){
@@ -316,13 +316,12 @@ int main(void)
 	fAlarmTimeMatched = 0;
 	RTC_TIME_T FullTime;
 	food_t VectorFood[MAX_POS];
-	food_t VectorFood_PRUEBA[MAX_POS];
 	uint8_t pos=0;
 	status_time aux;
 	tick_ct=0;
 	SystemCoreClockUpdate();
 	Board_Init();
-	uint8_t i;
+	//uint8_t i;
 
 	/* Initialize the SCT as PWM and set frequency */
 	Chip_SCTPWM_Init(LPC_SCT);
@@ -335,10 +334,10 @@ int main(void)
 	Chip_SCTPWM_SetOutPin(LPC_SCT, 1, 2);
 
 	/* Start with 0% duty cycle */
-	/*Chip_SCTPWM_SetDutyCycle(LPC_SCT, 1, Chip_SCTPWM_GetTicksPerCycle(LPC_SCT)*DUTY_CYCLE);
+	Chip_SCTPWM_SetDutyCycle(LPC_SCT, 1, Chip_SCTPWM_GetTicksPerCycle(LPC_SCT)*DUTY_CYCLE_full);
 	Chip_SCTPWM_Start(LPC_SCT);
 //	Chip_SCT_EnableEventInt(LPC_SCT, SCT_EVT_1);
-//	Chip_SCTPWM_Stop(LPC_SCT);*/
+	Chip_SCTPWM_Stop(LPC_SCT);
 
 	/* Enable SysTick Timer */
 	SysTick_Config(SystemCoreClock / TICKRATE_HZ);
