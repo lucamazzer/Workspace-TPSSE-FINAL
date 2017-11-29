@@ -60,6 +60,9 @@ typedef enum hora{mayor, menor,Ordenado }status_time;
 #define DUTY_CYCLE 90/100	//Duty Cycle configurado 180 grados
 #define DUTY_CYCLE_full 98/100	//Duty Cycle configurado 0 grados
 #define MAX_POS 3 // maxima cantidad de alarmas!
+volatile bool USART3_IRQ_flag=false;
+volatile bool USART2_IRQ_flag=false;
+char buffer[100];
 
 
 
@@ -278,6 +281,39 @@ void ServirComida (food_t * Comida, uint8_t * position){
 	set_new_alarm(Comida, *position);
 
 }
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * *
+ *  * * * * FUNCIONES PARA CONTROL BT* * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * *  * * * * * * * * * */
+
+void USARTconfig()
+{
+	Chip_UART_Init(LPC_USART2);
+	Chip_UART_SetBaud(LPC_USART2, 4800);  /* Set Baud rate */
+	Chip_UART_SetupFIFOS(LPC_USART2, UART_FCR_FIFO_EN | UART_FCR_TRG_LEV0); /* Modify FCR (FIFO Control Register)*/
+	Chip_UART_TXEnable(LPC_USART2); /* Enable UART Transmission */
+	Chip_UART_IntEnable(LPC_USART2, UART_IER_RBRINT);
+	/* Enable Interrupt for UART channel */
+	/* Priority = 1 */
+	NVIC_SetPriority(USART2_IRQn, 1);
+	/* Enable Interrupt for UART channel */
+	NVIC_EnableIRQ(USART2_IRQn);
+	Chip_UART_Init(LPC_USART3);
+	Chip_UART_SetBaud(LPC_USART3, 38400);  /* Set Baud rate */
+	Chip_UART_SetupFIFOS(LPC_USART3, UART_FCR_FIFO_EN | UART_FCR_TRG_LEV0); /* Modify FCR (FIFO Control Register)*/
+	Chip_UART_TXEnable(LPC_USART3); /* Enable UART Transmission */
+	Chip_UART_IntEnable(LPC_USART3, UART_IER_RBRINT);
+	/* Enable Interrupt for UART channel */
+	/* Priority = 1 */
+	NVIC_SetPriority(USART3_IRQn, 1);
+	/* Enable Interrupt for UART channel */
+	NVIC_EnableIRQ(USART3_IRQn);
+}
+
+
+
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *
  * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -308,6 +344,22 @@ void RTC_IRQHandler(void)
 	}
 }
 
+void UART2_IRQHandler()
+{
+	Chip_UART_IntDisable(LPC_USART3, UART_IER_RBRINT);
+	USART2_IRQ_flag=true;
+	//ReadTillEOL(LPC_USART2,recibido2,sizeof(recibido2));
+	Chip_UART_IntDisable(LPC_USART2, UART_IER_RBRINT);
+	Board_LED_Toggle(3);
+}
+void UART3_IRQHandler()
+{
+	Chip_UART_IntDisable(LPC_USART2, UART_IER_RBRINT);
+	USART3_IRQ_flag=true;
+	//ReadTillEOL(LPC_USART3,recibido0,sizeof(recibido0));
+	Chip_UART_ReadBlocking(LPC_USART3, buffer, 10);
+	Chip_UART_IntDisable(LPC_USART3, UART_IER_RBRINT);
+}
 
 
 int main(void)
