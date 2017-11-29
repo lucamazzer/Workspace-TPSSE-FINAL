@@ -290,7 +290,7 @@ void ServirComida (food_t * Comida, uint8_t * position){
 void USARTconfig()
 {
 	Chip_UART_Init(LPC_USART2);
-	Chip_UART_SetBaud(LPC_USART2, 4800);  /* Set Baud rate */
+	Chip_UART_SetBaud(LPC_USART2, 9600);  /* Set Baud rate */
 	Chip_UART_SetupFIFOS(LPC_USART2, UART_FCR_FIFO_EN | UART_FCR_TRG_LEV0); /* Modify FCR (FIFO Control Register)*/
 	Chip_UART_TXEnable(LPC_USART2); /* Enable UART Transmission */
 	Chip_UART_IntEnable(LPC_USART2, UART_IER_RBRINT);
@@ -373,6 +373,7 @@ int main(void)
 	tick_ct=0;
 	SystemCoreClockUpdate();
 	Board_Init();
+	int state =1;
 	//uint8_t i;
 
 	/* Initialize the SCT as PWM and set frequency */
@@ -403,7 +404,7 @@ int main(void)
 	FullTime.time[RTC_TIMETYPE_SECOND]  = 0;
 	FullTime.time[RTC_TIMETYPE_MINUTE]  = 0;
 	FullTime.time[RTC_TIMETYPE_HOUR]    = 16;
-	FullTime.time[RTC_TIMETYPE_DAYOFMONTH]  = 28;
+	FullTime.time[RTC_TIMETYPE_DAYOFMONTH]  = 29;
 	FullTime.time[RTC_TIMETYPE_DAYOFWEEK]   = 3;
 	FullTime.time[RTC_TIMETYPE_DAYOFYEAR]   = 332;
 	FullTime.time[RTC_TIMETYPE_MONTH]   = 11;
@@ -442,16 +443,17 @@ int main(void)
 	/* Enable RTC (starts increase the tick counter and second counter register) */
 	Chip_RTC_Enable(LPC_RTC, ENABLE);
 
-
+	USARTconfig();
 
 
 	while (1) {
+
 
 		__WFI();// ESPERA UNA ALARMA O UN EVENTO DE UART
 
 		//toggle_servo ();
 
-		if(fAlarmTimeMatched){
+		/*if(fAlarmTimeMatched){
 			fAlarmTimeMatched = false;
 
 			//Chip_RTC_GetFullTime(LPC_RTC, &FullTime);
@@ -459,6 +461,19 @@ int main(void)
 			//showTime(&(VectorFood[pos].clock));
 			//DEBUGOUT("cantida: %.2d\r\n", VectorFood[pos].food);
 			ServirComida(VectorFood,&pos);
+		}*/
+
+		/*if(USART3_IRQ_flag=true)
+		{
+			USART3_IRQ_flag=false;
+			debo
+
+		}*/
+		if(state)
+		{state=0;
+		Chip_RTC_GetFullTime(LPC_RTC,&FullTime);
+		showTime(&FullTime);
 		}
+
 	}
 }
