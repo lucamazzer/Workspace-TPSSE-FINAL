@@ -341,6 +341,60 @@ void parseBufferAlarm(char * buffer , food_t * ALARM)
 
 //}
 
+/********* BLUETOOTH: **********/
+
+#define OK_STR {(uint8_t)'O', (uint8_t)'K'}
+
+bool compareStrings(uint8_t *str1, uint8_t *str2, int max){
+	int i=0;
+	for( ; i<max ; i++){
+		if(str1[i]!=str2[i])
+			return false;
+	}
+	return true;
+}
+
+int recibirBT(LPC_USART_T *pUART, uint8_t *data){
+
+	int readBytes=0, bytesToRead=0;
+	uint8_t *p8 = data;
+
+	if ( (Chip_UART_ReadLineStatus(pUART) & UART_LSR_RDR) == 0 ){
+
+		return -1;
+
+	} else{
+
+		bytesToRead = (int)Chip_UART_ReadByte(pUART);
+	}
+
+	while( readBytes < bytesToRead ){
+
+		if ( (Chip_UART_ReadLineStatus(pUART) & UART_LSR_RDR) != 0 ){
+			*p8 = Chip_UART_ReadByte(pUART);
+			readBytes++;
+			p8++;
+		}
+	}
+	return readBytes;
+}
+
+int enviarBT(LPC_USART_T *pUART, uint8_t *data, int bytesToSend){
+
+	int sentBytes = 0;
+	uint8_t *p8 = data;
+
+	while( sentBytes < bytesToSend ){
+
+		if ( (Chip_UART_ReadLineStatus(pUART) & UART_LSR_THRE) != 0 ){
+			Chip_UART_SendByte(pUART, *p8);
+			sentBytes++;
+			p8++;
+		}
+	}
+	return sentBytes;
+}
+
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * *
